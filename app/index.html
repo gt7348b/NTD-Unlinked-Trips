@@ -22,14 +22,14 @@
     <!-- endbuild -->
   </head>
 <body ng-app='UPT'>
-
-  <div class="hero-unit">
-    <h1>NTD Project</h1>
-    <a href='#/'>Home</a>
-    <a href='#/add'>Add Data</a>
-    <div ng-view class='main'>
+  <div class='container'>
+    <div class="hero-unit">
+      <h1>NTD Project</h1>
+      <a href='#/'>Home</a>
+      <a href='#/add'>Add Data</a>
+      <div ng-view class='main'>
+      </div>
     </div>
-
   </div>
 
   <!-- build:js scripts/vendor.js -->
@@ -38,6 +38,7 @@
   <script src="../bower_components/underscore/underscore.js"></script>
   <script src="../bower_components/angular/angular.min.js"></script>
   <script src="../bower_components/angular-route/angular-route.min.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

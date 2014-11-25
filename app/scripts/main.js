@@ -2,7 +2,7 @@ console.log('Roscoes a cutie');
 
 (function(){
 
-  angular.module('UPT', ['ngRoute'])
+  angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
       'DATA_SOURCE': src='data/UPT1.json'
     })

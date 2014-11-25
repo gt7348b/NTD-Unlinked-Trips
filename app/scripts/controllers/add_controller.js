@@ -14,6 +14,10 @@
           DataFactory.searchMSA(msa);
         };
 
+        $scope.selectModes = function(modes){
+          DataFactory.selectModes(modes);
+        };
+
 
       }]);
 

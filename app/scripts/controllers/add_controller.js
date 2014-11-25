@@ -10,6 +10,10 @@
           DataFactory.searchAgency(agency);
         };
 
+        $scope.searchMSA = function(msa){
+          DataFactory.searchMSA(msa);
+        };
+
 
       }]);
 

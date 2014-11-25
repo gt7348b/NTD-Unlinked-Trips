@@ -4,7 +4,11 @@
     .factory('DataFactory', ['DATA_SOURCE', function(DATA_SOURCE){
 
        var searchAgency = function(agency){
-         console.log(agency)
+         console.log(agency);
+       };
+
+       var searchMSA = function(msa){
+         console.log(msa);
        };
 
 
@@ -12,7 +16,7 @@
 
       return {
         searchAgency: searchAgency,
-
+        searchMSA:    searchMSA,
         }
 
     }]);

@@ -1,8 +1,8 @@
 (function(){
 
   angular.module('UPT')
-    .factory('DataFactory', ['$http','DATA_SOURCE',
-      function($http, DATA_SOURCE){
+    .factory('DataFactory', ['$resource','DATA_SOURCE',
+      function($resource, DATA_SOURCE){
 
 
        var searchAgency = function(agency){

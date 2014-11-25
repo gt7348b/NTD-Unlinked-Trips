@@ -17,7 +17,22 @@ console.log('Roscoes a cutie');
       $routeProvider.when('/add', {
       templateUrl: 'templates/add-template.html',
       controller: 'AddController'
-    });
+      });
+
+      $routeProvider.when('/agency', {
+        templalteUrl:'templates/agency.html',
+        controller: ''
+      });
+
+      $routeProvider.when('/mode', {
+        templateUrl:'templates/mode.html',
+        controller:''
+      });
+
+      $routeProvider.when('/msa', {
+        templateUrl: 'templates/msa.html',
+        controller: ''
+      });
 
 
 

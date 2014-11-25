@@ -14,6 +14,11 @@ console.log('Roscoes a cutie');
         controller: 'MainController'
       });
 
+      $routeProvider.when('/add', {
+      templateUrl: 'templates/add-template.html',
+      controller: 'AddController'
+    });
+
 
 
 

@@ -21,17 +21,17 @@ console.log('Roscoes a cutie');
 
       $routeProvider.when('/agency', {
         templalteUrl:'templates/agency.html',
-        controller: ''
+        controller: 'AddController'
       });
 
       $routeProvider.when('/mode', {
         templateUrl:'templates/mode.html',
-        controller:''
+        controller:'AddController'
       });
 
       $routeProvider.when('/msa', {
         templateUrl: 'templates/msa.html',
-        controller: ''
+        controller: 'AddController'
       });
 
 

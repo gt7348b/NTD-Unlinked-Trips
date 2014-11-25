@@ -20,7 +20,7 @@ console.log('Roscoes a cutie');
       });
 
       $routeProvider.when('/agency', {
-        templalteUrl:'templates/agency.html',
+        templateUrl:'templates/agency.html',
         controller: 'AddController'
       });
 

@@ -12,7 +12,7 @@
          });
 
        };
-      console.log(searchAgency);
+      
        var searchMSA = function(msa){
          console.log(msa);
        };

@@ -1,6 +1,6 @@
-<form ng-submit='selectModes(modes)'>
-  <input type='checkbox' value='AR' id='AR'>Alaska Railroad</input></br>
-  <input type='checkbox' value='MG' id='MG'>Automated Guideway</input></br>
+<form ng-controller= 'AddController' ng-submit='selectModes(modes)'>
+  <input type='checkbox' ng-model='UPT' id='AR'>Alaska Railroad</input></br>
+  <input type='checkbox' ng-model='UPT' id='MG'>Automated Guideway</input></br>
   <input type='checkbox' value='CC' id='CC'>Cable Car</input></br>
   <input type='checkbox' value='CB' id='CB'>Commuter Bus</input></br>
   <input type='checkbox' value='CR' id='CR'>Commuter Rail</input></br>
@@ -14,9 +14,9 @@
   <input type='checkbox' value='MG' id='MG'>Monorail</input></br>
   <input type='checkbox' value='PB' id='PB'>Publico</input></br>
   <input type='checkbox' value='SR' id='SR'>Streetcar</input></br>
-  <input type='checkbox' value='TB' value='TB'>Trolleybus</input></br>
+  <input type='checkbox' value='TB' id='TB'>Trolleybus</input></br>
   <input type='checkbox' value='TR' id='TR'>Aerial Tramway</input></br>
-  <input type='checkbox' value='VP' value='VP'>Vanpool</input></br>
+  <input type='checkbox' value='VP' id='VP'>Vanpool</input></br>
   <input type='checkbox' value='OR' id='OR'>Other</input></br>
   <button>Submit</button>
 </form>

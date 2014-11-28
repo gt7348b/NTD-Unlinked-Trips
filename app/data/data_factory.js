@@ -12,12 +12,31 @@
          });
 
        };
-      
+
        var searchMSA = function(msa){
          console.log(msa);
        };
 
       var selectModes = function(modes){
+        $scope.AR = 'AR';
+        $scope.AG = 'MG';
+        $scope.CC = 'CC';
+        $scope.CB = 'CB';
+        $scope.CR = 'CR';
+        $scope.DR = 'DR';
+        $scope.FB = 'FB';
+        $scope.HR = 'HR';
+        $scope.IP = 'IP';
+        $scope.JT = 'JT';
+        $scope.LR = 'LR';
+        $scope.MB = 'MB';
+        $scope.MG = 'MG';
+        $scope.PB = 'PB';
+        $scope.SR = 'SR';
+        $scope.TB = 'TB';
+        $scope.TR = 'TR';
+        $scope.VP = 'VP';
+        $sopce.OR = 'OR'
         console.log(modes);
         console.log(DATA_SOURCE);
       };

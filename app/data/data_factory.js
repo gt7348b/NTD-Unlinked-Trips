@@ -1,17 +1,18 @@
 (function(){
 
   angular.module('UPT')
-    .factory('DataFactory', ['$resource','DATA_SOURCE',
-      function($resource, DATA_SOURCE){
+    .factory('DataFactory', ['$resource','$http','DATA_SOURCE',
+      function($resource, $http, DATA_SOURCE){
 
 
        var searchAgency = function(agency){
          console.log(agency);
-         $http.get('data/UPT1.json').success(function(data){
-           console.log(data);
+         console.log(DATA_SOURCE);
+         return $resource(DATA_SOURCE, {}, {query: {method:'GET', param:{agency:'AGENCY'}, isArray:true}
          });
-       };
 
+       };
+      console.log(searchAgency);
        var searchMSA = function(msa){
          console.log(msa);
        };

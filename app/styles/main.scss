@@ -15,22 +15,6 @@ body {
   $medium: new-breakpoint(max-width 750px 12);
   $mobile: new-breakpoint(max-width 600px 6);
 
-  .hero-unit {
-    margin: 50px auto 0 auto;
-    width: 600px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-    h1 {
-      font-size: 60px;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-  }
-
   .footer {
     background-color: white;
 
@@ -47,4 +31,21 @@ body {
         color: gray;
       }
     }
+  .hero-unit {
+    margin: 50px auto 0 auto;
+    width: 600px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+    h1 {
+      font-size: 60px;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+  }
+
+
 }

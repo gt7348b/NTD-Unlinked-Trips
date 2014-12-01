@@ -7,8 +7,10 @@
 
        var searchAgency = function(agency){
          console.log(agency);
-         console.log(DATA_SOURCE);
-         return $resource(DATA_SOURCE, {}, {query: {method:'GET', param:{agency:'AGENCY'}, isArray:true}
+         var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+
+           console.log(ntd_data);
+
          });
 
        };
@@ -18,9 +20,15 @@
        };
 
       var selectModes = function(modes){
-        
+
         console.log(modes);
         console.log(DATA_SOURCE);
+        var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+
+          console.log(ntd_data);
+
+        });
+        
       };
 
 

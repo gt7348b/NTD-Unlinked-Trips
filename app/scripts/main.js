@@ -4,7 +4,7 @@ console.log('Roscoes a cutie');
 
   angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
-      'DATA_SOURCE': src='data/UPT1.json'
+      'DATA_SOURCE': src='data/UPT_2.json'
     })
 
     .config(function($routeProvider){

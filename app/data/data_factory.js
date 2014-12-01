@@ -6,20 +6,19 @@
 
 
        var searchAgency = function(agency){
-         console.log(agency);
+         //console.log(agency);
 
          var response = [];
 
          $.getJSON(DATA_SOURCE).done(function(ntd_data){
 
-           var sel_agency = ntd_data.filter(function(entry){
+           var sel_agency = ntd_data.filter(function(entry){ //filters the data by agency name
              //console.log(entry.AGENCY);
              if (entry.AGENCY == agency.name){
-             console.log(entry);
-             response.push(entry);
+
+             response.push(entry);  //adds the data to teh response array
              }
 
-             console.log(sel_agency);
            });
 
            console.log(response);
@@ -31,20 +30,21 @@
        var searchMSA = function(msa){
          console.log(msa);
 
-         var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+         var msa_filter = [];
 
-           var msa_filter = ntd_data.forEach(function(entry){
+         $.getJSON(DATA_SOURCE).done(function(ntd_data){
+
+           ntd_data.forEach(function(entry){
 
              if (entry.UZA_NAME == msa.region){
 
-               console.log(entry);
-               return entry;
+               msa_filter.push(entry);
 
              }   // This is the return of the if
            });
            console.log(msa_filter);
          });
-         console.log(data);
+
        };
 
 

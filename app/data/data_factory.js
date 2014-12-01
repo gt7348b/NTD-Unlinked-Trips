@@ -13,7 +13,8 @@
              //console.log(entry.AGENCY);
              if (entry.AGENCY === agency.name){
              console.log(entry.AGENCY);
-             return entry.AGNECY}
+             return entry.AGNECY
+             }
            });
 
            console.log(response);
@@ -24,15 +25,35 @@
 
        var searchMSA = function(msa){
          console.log(msa);
+
+         var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+
+           ntd_data.forEach(function(entry){
+
+             if (entry.UZA_NAME == msa.region){
+
+               console.log(entry.UZA_NAME);
+               return entry.UZA_NAME;
+
+             }   // This is the return of the if
+           });
+
+         });
+         console.log(data);
        };
+
 
       var selectModes = function(modes){
 
         console.log(modes);
-        console.log(DATA_SOURCE);
+
         var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
 
-          console.log(ntd_data);
+        //  ntd_data.forEach(function(entry){
+
+          //  if (entry.UZA_NAME == modes.name)
+
+          //});
 
         });
 

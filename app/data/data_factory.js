@@ -7,9 +7,16 @@
 
        var searchAgency = function(agency){
          console.log(agency);
-         var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+         var response = $.getJSON(DATA_SOURCE).done(function(ntd_data){
 
-           console.log(ntd_data);
+           ntd_data.forEach(function(entry){
+             //console.log(entry.AGENCY);
+             if (entry.AGENCY === agency.name){
+             console.log(entry.AGENCY);
+             return entry.AGNECY}
+           });
+
+           console.log(response);
 
          });
 
@@ -28,7 +35,7 @@
           console.log(ntd_data);
 
         });
-        
+
       };
 
 

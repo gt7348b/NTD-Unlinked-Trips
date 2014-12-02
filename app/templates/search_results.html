@@ -1,9 +1,9 @@
 <div class='results'>
 
-    <h3>NTD Project</h3>
-    <a href='#/'>Home</a>
-    <a href='#/add'>Add Data</a>
-    <div ng-view class='main'>
-    </div>
-  </div>
+  <ul class='results'>Agency Search Results
+    <li ng-repeat="agency in agencies">
+      {{ agency.MODES }} operated by {{ agency.AGENCY }}
+    </li>
+
+  </ul>
 </div>

@@ -5,7 +5,7 @@ console.log('Roscoes a cutie');
   var agency_response = [],
   msa_response = [],
   mode_response = [];
-  
+
 
   angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
@@ -37,6 +37,11 @@ console.log('Roscoes a cutie');
 
       $routeProvider.when('/msa', {
         templateUrl: 'templates/msa.html',
+        controller: 'AddController'
+      });
+
+      $routeProvider.when('/results', {
+        templateUrl: 'templates/search_results.html',
         controller: 'AddController'
       });
 

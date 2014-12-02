@@ -1,8 +1,8 @@
 (function(){
 
   angular.module('UPT')
-    .factory('DataFactory', ['$resource','$http','DATA_SOURCE',
-      function($resource, $http, DATA_SOURCE){
+    .factory('DataFactory', ['$rootScope','$http', '$location','DATA_SOURCE',
+      function($rootScope, $http, $location, DATA_SOURCE){
 
 
        var searchAgency = function(agency){
@@ -22,9 +22,15 @@
            });
 
            console.log(response);
+
+           //$scope.agencies = response;
+
            return response;
 
+         }).done(function(response){
+           return $location.path('/results');
          });
+
 
        };
 

@@ -18,7 +18,7 @@
 
           DataFactory.searchAgency(agency).then(function(results){
 
-            $scope.data = results;
+            $scope.agencies = results;
           });
 
         };

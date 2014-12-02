@@ -2,11 +2,6 @@ console.log('Roscoes a cutie');
 
 (function(){
 
-  var agency_response = [],
-  msa_response = [],
-  mode_response = [];
-
-
   angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
       'DATA_SOURCE': src='data/UPT_2.json'

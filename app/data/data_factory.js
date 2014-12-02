@@ -1,37 +1,34 @@
 (function(){
 
   angular.module('UPT')
-    .factory('DataFactory', ['$rootScope','$http', '$location','DATA_SOURCE',
-      function($rootScope, $http, $location, DATA_SOURCE){
+    .factory('DataFactory', ['$q','$location','DATA_SOURCE',
+      function($q, $location, DATA_SOURCE){
 
 
        var searchAgency = function(agency){
-         console.log(agency);
+           console.log(agency);
 
-         var response = [];
+           var response = [];
+           var deferred = $q.defer();
 
-         $.getJSON(DATA_SOURCE).done(function(ntd_data){
+           $.getJSON(DATA_SOURCE).done(function(ntd_data){
 
-           var sel_agency = ntd_data.filter(function(entry){ //filters the data by agency name
-             //console.log(entry.AGENCY);
-             if (entry.AGENCY == agency.name){
+             var sel_agency = ntd_data.filter(function(entry){ //filters the data by agency name
+               if (entry.AGENCY == agency.name){
+                 response.push(entry);  //adds the data to the response array
+                 }
+                });
 
-               response.push(entry);  //adds the data to the response array
-             }
+             console.log(response);
+             //return response;
+             deferred.resolve(response);
 
-           });
+           //}).done(function(response){
+             //return $location.path('/results');
 
-           console.log(response);
-
-           //$scope.agencies = response;
-
-           return response;
-
-         }).done(function(response){
-           return $location.path('/results');
          });
 
-
+         return deferred.promise;
        };
 
        var searchMSA = function(msa){

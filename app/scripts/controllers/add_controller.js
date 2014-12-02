@@ -11,11 +11,6 @@
         console.log("hey - i'm in the add controller")
 
         $scope.searchAgency = function(agency){
-        //  DataFactory.searchAgency(agency).then(function(results){
-          //  agency_response = results;
-        //  });
-        //  console.log(agency_response);
-
           DataFactory.searchAgency(agency).then(function(results){
 
             $scope.agencies = results;
@@ -24,7 +19,9 @@
         };
 
         $scope.searchMSA = function(msa){
-          DataFactory.searchMSA(msa);
+          DataFactory.searchMSA(msa).then(function(results){
+            $scope.agencies = results;
+          });
         };
 
         $scope.selectModes = function(modes){

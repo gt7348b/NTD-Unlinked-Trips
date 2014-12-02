@@ -35,6 +35,7 @@
          console.log(msa);
 
          var msa_filter = [];
+         var deferred = $q.defer();
 
          $.getJSON(DATA_SOURCE).done(function(ntd_data){
 
@@ -42,14 +43,15 @@
 
              if (entry.UZA_NAME == msa.region){
 
-               msa_filter.push(entry);
+               msa_filter.push(entry); //Adds results to array
 
              }   // This is the return of the if
            });
            console.log(msa_filter);
-           return msa_filter;
+           //return msa_filter;
+           deferred.resolve(msa_filter);
          });
-
+         return deferred.promise;
        };
 
 

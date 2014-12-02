@@ -6,7 +6,7 @@
 
 
        var searchAgency = function(agency){
-         //console.log(agency);
+         console.log(agency);
 
          var response = [];
 
@@ -16,12 +16,13 @@
              //console.log(entry.AGENCY);
              if (entry.AGENCY == agency.name){
 
-             response.push(entry);  //adds the data to teh response array
+               response.push(entry);  //adds the data to the response array
              }
 
            });
 
            console.log(response);
+           return response;
 
          });
 
@@ -43,6 +44,7 @@
              }   // This is the return of the if
            });
            console.log(msa_filter);
+           return msa_filter;
          });
 
        };

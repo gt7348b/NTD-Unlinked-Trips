@@ -7,9 +7,11 @@
         console.log("hey - i'm in the add controller")
 
         $scope.searchAgency = function(agency){
-          DataFactory.searchAgency(agency);
-        //  $scope.location('/results');
+          DataFactory.searchAgency(agency).then(function(results){
+            $scope.agencies = results;
+          });
         };
+
 
         $scope.searchMSA = function(msa){
           DataFactory.searchMSA(msa);

@@ -1,8 +1,13 @@
 <form ng-submit='searchAgency(agency)'>
   <input type='text' ng-model='agency.name' placeholder='Enter Full Agency Name'/>
   <button>Submit</button>
-
-  <div>
-    <ul class='results'></ul>
-  </div>
 </form>
+
+<div>
+  <ul class='results'>
+    <li ng-repeat="agency in agencies">
+      {{ agency.MODES }} operated by {{ agency.AGENCY }}
+    </li>
+
+  </ul>
+</div>

@@ -24,7 +24,7 @@
 
             var x = d3.scale.linear()
             .domain([0, d3.max(data)])
-            .range([0, 420]);
+            .range([0, width], .1);
 
             var y = d3.scale.linear()
                 .range([height, 0]);
@@ -33,9 +33,9 @@
 
                 d3.select(".chart")
                 .selectAll("div")
-                .data(data)
+                .data(results)
                 .enter().append("div")
-                .style("width", function(d) { return x(d) + "px"; })
+                .style("width", function(d) { return y(d) + "px"; })
                 .text(function(d) { return d; });
 
             var xAxis = d3.svg.axis()

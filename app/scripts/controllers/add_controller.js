@@ -28,6 +28,8 @@
                 .attr('width', width)
                 .attr('height', height);
 
+            console.log(d3.select(results));
+
           });
 
         };

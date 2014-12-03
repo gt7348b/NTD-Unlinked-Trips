@@ -3,16 +3,17 @@
   <button>Submit</button>
 </form>
 
-
+<!-- This section displays the list of agencies from the search -->
 <div class='results'>
   {{data}}
   <ul>Agency Search Results
     <li ng-repeat="agency in agencies">
       {{ agency.MODES }} operated by {{ agency.AGENCY }}
     </li>
-
   </ul>
-  <div class='chart'>
-    <div>Insert chart here</div>
-  </div>
-</div>
+
+  <!-- This section displays the Chart from the search -->
+
+  <svg class='chart'>
+    Insert chart here
+  </svg>

@@ -46,19 +46,18 @@
 
                 // REMEMBER:  "+d.APR02" converts a string to a number
 
-            var svg = d3.select(".chart")
-                .attr('width', width + margin.left + margin.right)
-                .attr('height', height + margin.top + margin.bottom)
-                .selectAll("div")
-                .data(results)
-                .enter().append("div")
-                .style("width", function(d) { return x(d) + "px"; })
-                .text(function(d) { return  d.AGENCY; })
-                .selectAll("div")
-                .data(results)
-                .enter().append("div")
-                .style("width", function(d) { return x(d) + "px"; })
-                .text(function(d) { return  d.SEP02; });;
+          var svg = d3.select('chart').append('svg')
+                    .attr('width', width + margin.left + margin.right)
+                    .attr('height', height + margin.top + margin.bottom)
+                  .append('g')
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+          d3.csv('data/MONTHLY_ADJ_DATA_05_02_2012/UPT-Table 1.csv', function(error, data){
+
+            console.log('initial data', data);
+
+          });
+
 
 
         //    chart.append('x')

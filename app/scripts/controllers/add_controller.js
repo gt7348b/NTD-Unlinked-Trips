@@ -17,7 +17,7 @@
 
             //var pairedresults = _.pairs(results);
 
-            //console.log(pairedresults);
+            console.log(d3.values(results));
 
             var margin = {top: 20, right: 30, bottom: 30, left:40},
                 width = 960 - margin.left - margin.right,
@@ -42,6 +42,9 @@
                 .scale(y)
                 .orient('left');
 
+
+                // REMEMBER:  "+d.APR02" converts a string to a number
+
             var svg = d3.select(".chart")
                 .attr('width', width + margin.left + margin.right)
                 .attr('height', height + margin.top + margin.bottom)
@@ -54,7 +57,7 @@
                 .data(results)
                 .enter().append("div")
                 .style("width", function(d) { return x(d) + "px"; })
-                .text(function(d) { return  d.MODES; });;
+                .text(function(d) { return  d.SEP02; });;
 
 
         //    chart.append('x')

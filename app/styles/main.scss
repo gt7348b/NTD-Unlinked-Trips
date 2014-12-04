@@ -57,7 +57,16 @@ body {
         margin: 1px;
         color: white;
       }
-      
+
+      .chart svg {
+        font: 10px sans-serif;
+        fill: green;
+        text-align: left;
+        padding: 3px;
+        margin: 1px;
+        color: white;
+      }
+
 
       .axis path,
       .axis line {

@@ -1,23 +1,22 @@
-<form ng-submit='selectModes(modes)'>
-  <input type='radio' value='AR'>Alaska Railroad</input></br>
-  <input type='radio' value='MG'>Automated Guideway</input></br>
-  <input type='radio' value='RB'>Bus Rapid Transit</input></br>
-  <input type='radio' value='CC'>Cable Car</input></br>
-  <input type='radio' value='CB'>Commuter Bus</input></br>
-  <input type='radio' value='CR'>Commuter Rail</input></br>
-  <input type='radio' value='DR'>Demand Response</input></br>
-  <input type='radio' value='FB'>Ferryboat</input></br>
-  <input type='radio' value='HR'>Heavy Rail</input></br>
-  <input type='radio' value='IP'>Inclinded Plane</input></br>
-  <input type='radio' value='JT'>Jitney</input></br>
-  <input type='radio' value='lR'>Light Rail</input></br>
-  <input type='radio' value='MB'>Motor Bus</input></br>
-  <input type='radio' value='MG'>Monorail</input></br>
-  <input type='radio' value='PB'>Publico</input></br>
-  <input type='radio' value='SR'>Streetcar</input></br>
-  <input type='radio' value='TB'>Trolleybus</input></br>
-  <input type='radio' value='TR'>Aerial Tramway</input></br>
-  <input type='radio' value='VP'>Vanpool</input></br>
-  <input type='radio' value='OR'>Other</input></br>
+<form ng-controller= 'AddController' ng-submit='selectModes(modes)'>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='AR'>Alaska Railroad</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='MG'>Automated Guideway</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='CC' id='CC'>Cable Car</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='CB' id='CB'>Commuter Bus</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='CR' id='CR'>Commuter Rail</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='DR' id='DR'>Demand Response</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='FB' id='FB'>Ferryboat</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='HR' id='HR'>Heavy Rail</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='IP' id='IP'>Inclinded Plane</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='JT' id='JT'>Jitney</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='LR' id='lR'>Light Rail</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='MB' id='MB'>Motor Bus</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='MG' id='MG'>Monorail</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='PB' id='PB'>Publico</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='SR' id='SR'>Streetcar</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='TB' id='TB'>Trolleybus</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='TR' id='TR'>Aerial Tramway</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='VP' id='VP'>Vanpool</input></br>
+  <input type='checkbox' ng-model='UPT' name='mode' ngTrueValue='OR' id='OR'>Other</input></br>
   <button>Submit</button>
 </form>

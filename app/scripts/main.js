@@ -4,8 +4,9 @@ console.log('Roscoes a cutie');
 
   angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
-      'DATA_SOURCE': src='data/UPT1.json'
+      'DATA_SOURCE': src='data/UPT_2.json'
     })
+
 
     .config(function($routeProvider){
 
@@ -31,6 +32,11 @@ console.log('Roscoes a cutie');
 
       $routeProvider.when('/msa', {
         templateUrl: 'templates/msa.html',
+        controller: 'AddController'
+      });
+
+      $routeProvider.when('/results', {
+        templateUrl: 'templates/search_results.html',
         controller: 'AddController'
       });
 

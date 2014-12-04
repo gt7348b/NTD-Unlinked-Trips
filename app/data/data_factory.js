@@ -1,24 +1,74 @@
 (function(){
 
   angular.module('UPT')
-    .factory('DataFactory', ['$resource','DATA_SOURCE',
-      function($resource, DATA_SOURCE){
+    .factory('DataFactory', ['$q','$location','DATA_SOURCE',
+      function($q, $location, DATA_SOURCE){
 
 
        var searchAgency = function(agency){
-         console.log(agency);
-         $http.get('data/UPT1.json').success(function(data){
-           console.log(data);
+           console.log(agency);
+
+           var response = [];
+           var deferred = $q.defer();
+
+           $.getJSON(DATA_SOURCE).done(function(ntd_data){
+
+             var sel_agency = ntd_data.filter(function(entry){ //filters the data by agency name
+               if (entry.AGENCY == agency.name){
+                 response.push(entry);  //adds the data to the response array
+                 }
+                });
+
+             console.log(response);
+             //return response;
+             deferred.resolve(response);
+
+           //}).done(function(response){
+             //return $location.path('/results');
+
          });
+
+         return deferred.promise;
        };
 
        var searchMSA = function(msa){
          console.log(msa);
+
+         var msa_filter = [];
+         var deferred = $q.defer();
+
+         $.getJSON(DATA_SOURCE).done(function(ntd_data){
+
+           ntd_data.forEach(function(entry){
+
+             if (entry.UZA_NAME == msa.region){
+
+               msa_filter.push(entry); //Adds results to array
+
+             }   // This is the return of the if
+           });
+           console.log(msa_filter);
+           //return msa_filter;
+           deferred.resolve(msa_filter);
+         });
+         return deferred.promise;
        };
 
+
       var selectModes = function(modes){
+
         console.log(modes);
-        console.log(DATA_SOURCE);
+
+        var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+
+        //  ntd_data.forEach(function(entry){
+
+          //  if (entry.UZA_NAME == modes.name)
+
+          //});
+
+        });
+
       };
 
 

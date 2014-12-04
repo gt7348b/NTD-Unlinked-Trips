@@ -15,8 +15,13 @@
 
             $scope.agencies = results;
 
-            var width = 960,
-                height = 500;
+            //var pairedresults = _.pairs(results);
+
+            //console.log(pairedresults);
+
+            var margin = {top: 20, right: 30, bottom: 30, left:40},
+                width = 960 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
 
             var x = d3.scale.ordinal()
                 .rangeRoundBands([0, width], .1);
@@ -28,12 +33,18 @@
                 .scale(x)
                 .orient('bottom');
 
-                d3.select(".chart")
+            var yAxis = d3.svg.axis()
+                .scale(y)
+                .orient('left');
+
+            var svg = d3.select(".chart")
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
                 .selectAll("div")
                 .data(results)
                 .enter().append("div")
                 .style("width", function(d) { return y(d) + "px"; })
-                .text(function(d) { return d; });
+                .text(function(d) { return  d.AGENCY; });
 
         //    chart.append('x')
           //      .attr('class', 'x axis')

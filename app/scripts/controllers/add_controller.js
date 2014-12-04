@@ -29,6 +29,11 @@
             var y = d3.scale.linear()
                 .range([height, 0]);
 
+            var line = d3.svg.line()
+                .interpolate('cardinal')
+                .x(function(d) { return x(d.label)})
+                .y(function(d) { return y(d.value)});
+
             var xAxis = d3.svg.axis()
                 .scale(x)
                 .orient('bottom');
@@ -43,8 +48,14 @@
                 .selectAll("div")
                 .data(results)
                 .enter().append("div")
-                .style("width", function(d) { return y(d) + "px"; })
-                .text(function(d) { return  d.AGENCY; });
+                .style("width", function(d) { return x(d) + "px"; })
+                .text(function(d) { return  d.AGENCY; })
+                .selectAll("div")
+                .data(results)
+                .enter().append("div")
+                .style("width", function(d) { return x(d) + "px"; })
+                .text(function(d) { return  d.MODES; });;
+
 
         //    chart.append('x')
           //      .attr('class', 'x axis')

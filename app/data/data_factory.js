@@ -75,7 +75,7 @@
 
         var response = [];
         var deferred = $q.defer();
-          
+
         console.log('I made into into the Render Factory');
 
         var margin = {top: 20, right: 30, bottom: 30, left: 40},
@@ -125,10 +125,9 @@
 
           deferred.resolve(response);
 
-
         });
 
-        return data;
+        return deferred.promise;
       };
 
 

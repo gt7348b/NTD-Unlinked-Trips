@@ -73,7 +73,9 @@
 
       var d3render = function(results){
 
-
+        var response = [];
+        var deferred = $q.defer();
+          
         console.log('I made into into the Render Factory');
 
         var margin = {top: 20, right: 30, bottom: 30, left: 40},
@@ -112,7 +114,17 @@
         var data = d3.csv('data/MONTHLY_ADJ_DATA_05_02_2012/UPT-Table 1.csv', function(error, data){
 
           console.log('initial data', data);
-          return data;
+
+          var sel_agency = data.filter(function(entry){ //filters the data by agency name
+            if (entry.AGENCY == results.name){
+              response.push(entry);  //adds the data to the response array
+            }
+          });
+
+          console.log(response);
+
+          deferred.resolve(response);
+
 
         });
 

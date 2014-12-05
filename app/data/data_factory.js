@@ -132,13 +132,12 @@
 
               console.log(month);
 
-          var uptData = data.map(function (t){
+          var uptData = response.map(function (t){
             return {
               agency: t.AGENCY,
               mode:   t.MODES,
               trips: month.map(function(d){
-                console.log(d);
-                return {month: month, upt: +d[month]};
+                return {month: d, upt: +d[month]};
               })
             };
           });

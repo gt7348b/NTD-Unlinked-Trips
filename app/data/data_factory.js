@@ -121,8 +121,8 @@
 
           console.log(response);
 
-          var modes = d3.keys(data[0])
-              .filter(function(key){ return key!== 'MODES'})
+          var month = d3.keys(data[0])
+              .filter(function(key){ return key!=='MODES'})
               .filter(function(key){ return key!=='NTDID'})
               .filter(function(key){ return key!=='AGENCY'})
               .filter(function(key){ return key!=='SSW'})
@@ -130,7 +130,20 @@
               .filter(function(key){ return key!=='UZA_NAME'})
               .filter(function(key){ return key!=='TOS'});
 
-              console.log(modes);
+              console.log(month);
+
+          var uptData = data.map(function (t){
+            return {
+              agency: t.AGENCY,
+              mode:   t.MODES,
+              trips: month.map(function(d){
+                console.log(d);
+                return {month: month, upt: +d[month]};
+              })
+            };
+          });
+
+          console.log(uptData);
 
           x.domain(response.map(function(d){ return d.MODE}));
 

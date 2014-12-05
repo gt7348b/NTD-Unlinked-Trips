@@ -113,8 +113,6 @@
 
         var data = d3.csv('data/MONTHLY_ADJ_DATA_05_02_2012/UPT-Table 1.csv', function(error, data){
 
-          console.log('initial data', data);
-
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
             if (entry.AGENCY == results.name){
               response.push(entry);  //adds the data to the response array
@@ -122,6 +120,24 @@
           });
 
           console.log(response);
+
+          var modes = d3.keys(data[0])
+              .filter(function(key){ return key!== 'MODES'})
+              .filter(function(key){ return key!=='NTDID'})
+              .filter(function(key){ return key!=='AGENCY'})
+              .filter(function(key){ return key!=='SSW'})
+              .filter(function(key){ return key!=='UZA'})
+              .filter(function(key){ return key!=='UZA_NAME'})
+              .filter(function(key){ return key!=='TOS'});
+
+              console.log(modes);
+
+          x.domain(response.map(function(d){ return d.MODE}));
+
+          svg.append('g')
+              .attr('class', 'x axis')
+              .attr('transform', 'translate(0, ' + height +')')
+              .call(xAxis);
 
           deferred.resolve(response);
 

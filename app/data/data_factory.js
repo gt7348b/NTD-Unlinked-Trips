@@ -111,10 +111,10 @@
         .append('g')
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        var data = d3.csv('data/MONTHLY_ADJ_DATA_05_02_2012/UPT-Table 1.csv', function(error, data){
+        var data = d3.csv('data/September 2014 Adjusted Database/UPT-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
-            if (entry.AGENCY == results.name){
+            if (entry.Agency == results.name){
               response.push(entry);  //adds the data to the response array
             }
           });
@@ -122,20 +122,21 @@
           console.log(response);
 
           var month = d3.keys(data[0])
-              .filter(function(key){ return key!=='MODES'})
+              .filter(function(key){ return key!=='Modes'})
               .filter(function(key){ return key!=='NTDID'})
-              .filter(function(key){ return key!=='AGENCY'})
+              .filter(function(key){ return key!=='Agency'})
+              .filter(function(key){ return key!=='Active'})
               .filter(function(key){ return key!=='SSW'})
               .filter(function(key){ return key!=='UZA'})
-              .filter(function(key){ return key!=='UZA_NAME'})
+              .filter(function(key){ return key!=='UZA Name'})
               .filter(function(key){ return key!=='TOS'});
 
               console.log(month);
 
           var uptData = response.map(function (t){
             return {
-              agency: t.AGENCY,
-              mode:   t.MODES,
+              agency: t.Agency,
+              mode:   t.Modes,
               trips: month.map(function(d){
                 return {month: d, upt: +d[month]};
               })

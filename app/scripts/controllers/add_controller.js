@@ -14,9 +14,12 @@
 
           DataFactory.d3render(results).then(function(results){
 
-            $scope.agencies = results;
+            $scope.agencies = results[0];
 
-            var month = results.trips.month;
+            console.log(results);
+
+            var month = results[1];
+            console.log(month)
 
             var margin = {top: 20, right: 30, bottom: 30, left: 40},
             width = 960 - margin.left - margin.right,

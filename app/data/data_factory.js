@@ -108,7 +108,7 @@
             return {
               agency: t.Agency,
               mode:   t.Modes,
-              region: t.UZA Name,
+              region: t.UZA,
               trips: month.map(function(d){
                 return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })
@@ -117,7 +117,13 @@
 
           console.log(uptData);
 
-          deferred.resolve(uptData);
+          var cleandata = [];
+
+          cleandata.push(uptData);
+
+          cleandata.push(month);
+
+          deferred.resolve(cleandata);
 
         });
 

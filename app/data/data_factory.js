@@ -138,7 +138,8 @@
               agency: t.Agency,
               mode:   t.Modes,
               trips: month.map(function(d){
-                return {month: d, upt: +d[month]};
+                console.log(t[d]);
+                return {month: d, upt: t[d]};
               })
             };
           });

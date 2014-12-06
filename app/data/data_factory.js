@@ -10,24 +10,57 @@
            var response = [];
            var deferred = $q.defer();
 
-           $.getJSON(DATA_SOURCE).done(function(ntd_data){
+           var data = d3.csv('data/September 2014 Adjusted Database/UPT-Table 1.csv', function(error, data){
 
-             var sel_agency = ntd_data.filter(function(entry){ //filters the data by agency name
-               if (entry.AGENCY == agency.name){
+             var sel_agency = data.filter(function(entry){ //filters the data by agency name
+               if (entry.Agency == agency.name){
                  response.push(entry);  //adds the data to the response array
-                 }
-                });
+               }
+             });
 
-             console.log(response);
+             //console.log(response);
 
-             deferred.resolve(response);
+             // This creates an array of months
 
-           //}).done(function(response){
-             //return $location.path('/results');
+             var month = d3.keys(data[0])
+             .filter(function(key){ return key!=='Modes'})
+             .filter(function(key){ return key!=='NTDID'})
+             .filter(function(key){ return key!=='Agency'})
+             .filter(function(key){ return key!=='Active'})
+             .filter(function(key){ return key!=='SSW'})
+             .filter(function(key){ return key!=='UZA'})
+             .filter(function(key){ return key!=='UZA Name'})
+             .filter(function(key){ return key!=='TOS'});
 
-         });
+             //  console.log(month);
 
-         return deferred.promise;
+             // This creates an array used to call render the data
+
+             var uptData = response.map(function (t){
+               return {
+                 agency: t.Agency,
+                 mode:   t.Modes,
+                 region: t.UZA,
+                 trips: month.map(function(d){
+                   return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
+                 })
+               };
+             });
+
+             console.log(uptData);
+
+             var cleandata = [];
+
+             cleandata.push(uptData);
+
+             cleandata.push(month);
+
+             deferred.resolve(cleandata);
+
+           });
+
+           return deferred.promise;
+
        };
 
        var searchMSA = function(msa){

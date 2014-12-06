@@ -78,44 +78,6 @@
 
         console.log('I made into into the Render Factory');
 
-        var margin = {top: 20, right: 30, bottom: 30, left: 40},
-        width = 960 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
-
-
-        var x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1);
-
-        var y = d3.scale.linear()
-        .range([height, 0]);
-
-        var line = d3.svg.line()
-        .interpolate('cardinal')
-        .x(function(d) { return x(d.label)})
-        .y(function(d) { return y(d.value)});
-
-        var xAxis = d3.svg.axis()
-        .scale(x)
-        .orient('bottom');
-
-        var yAxis = d3.svg.axis()
-        .scale(y)
-        .orient('left');
-
-        var line = d3.svg.line()
-        .interpolate("cardinal")
-        .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
-        .y(function (d) { return y(d.upt); });
-
-        var color = d3.scale.ordinal()
-        .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
-
-        var svg = d3.select('chart').append('svg')
-        .attr('width', width + margin.left + margin.right)
-        .attr('height', height + margin.top + margin.bottom)
-        .append('g')
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
         var data = d3.csv('data/September 2014 Adjusted Database/UPT-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
@@ -125,6 +87,8 @@
           });
 
           //console.log(response);
+
+          // This creates an array of months
 
           var month = d3.keys(data[0])
               .filter(function(key){ return key!=='Modes'})
@@ -138,10 +102,13 @@
 
             //  console.log(month);
 
+            // This creates an array used to call render the data
+
           var uptData = response.map(function (t){
             return {
               agency: t.Agency,
               mode:   t.Modes,
+              region: t.UZA Name,
               trips: month.map(function(d){
                 return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })
@@ -150,35 +117,7 @@
 
           console.log(uptData);
 
-          x.domain(month.map(function(d){ return d }));
-          y.domain([
-            d3.min(uptData, function(c){
-              return d3.min(c.trips, function(min){ return min.upt;});
-            }),
-            d3.max(uptData, function(c){
-              return d3.max(c.trips, function(max){ return max.upt;});
-            })
-          ]);
-
-          var trips = svg.selectAll('.chart')
-              .data(uptData)
-            .enter().append('g')
-              .attr('class', 'chart');
-
-          trips.append('path')
-            .attr('class', 'line')
-            .attr('d', function(d) {return line(d.trips);})
-            .style('stroke', function(d) { return color(d.Modes);})
-            .style('stroke-width', '2em')
-            .style('fill', 'none');
-
-          // svg.append('g')
-          //     .attr('class', 'x axis')
-          //     .attr('transform', 'translate(0, ' + height +')')
-          //     .call(xAxis);
-
-
-          deferred.resolve(response);
+          deferred.resolve(uptData);
 
         });
 

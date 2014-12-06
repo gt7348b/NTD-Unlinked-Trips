@@ -138,15 +138,22 @@
               agency: t.Agency,
               mode:   t.Modes,
               trips: month.map(function(d){
-                console.log(t[d].replace(/,/g, ''));
-                return {month: d, upt: +t[d].replace(/,/g, '')};
+                return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })
             };
           });
 
           console.log(uptData);
 
-          x.domain(response.map(function(d){ return d.MODE}));
+          x.domain(month.map(function(d){ return d }));
+          y.domain([
+            d3.min(uptData, function(c){
+              return d3.min(c.trips, function(min){ return min.upt;});
+            }),
+            d3.max(uptData, function(c){
+              return d3.max(c.trips, function(max){ return max.upt;});
+            })
+            ]);
 
           svg.append('g')
               .attr('class', 'x axis')

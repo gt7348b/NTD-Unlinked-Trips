@@ -138,8 +138,8 @@
               agency: t.Agency,
               mode:   t.Modes,
               trips: month.map(function(d){
-                console.log(t[d]);
-                return {month: d, upt: t[d]};
+                console.log(t[d].replace(/,/g, ''));
+                return {month: d, upt: +t[d].replace(/,/g, '')};
               })
             };
           });

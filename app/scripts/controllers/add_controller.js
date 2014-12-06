@@ -16,10 +16,14 @@
 
             $scope.agencies = results[0];
 
-            console.log(results);
+            var uptData = results[0];
+
+            //console.log(results);
 
             var month = results[1];
-            console.log(month)
+            //console.log(month)
+
+            //d3.select(".chart").append("svg").attr("width", 100).attr("height", 100).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
 
             var margin = {top: 20, right: 30, bottom: 30, left: 40},
             width = 960 - margin.left - margin.right,
@@ -53,7 +57,7 @@
             var color = d3.scale.ordinal()
             .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
 
-            var svg = d3.select('chart').append('svg')
+            var svg = d3.select('.chart').append('svg')
             .attr('width', width + margin.left + margin.right)
             .attr('height', height + margin.top + margin.bottom)
             .append('g')
@@ -82,7 +86,7 @@
             .attr('class', 'line')
             .attr('d', function(d) {return line(d.trips);})
             .style('stroke', function(d) { return color(d.Modes);})
-            .style('stroke-width', '2em')
+            .style('stroke-width', '.2em')
             .style('fill', 'none');
 
           });

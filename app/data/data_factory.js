@@ -9,8 +9,8 @@
 
            var response = [];
            var deferred = $q.defer();
-
-           var data = d3.csv('data/September 2014 Adjusted Database/UPT-Table 1.csv', function(error, data){
+           
+           var data = d3.csv(DATA_SOURCE, function(error, data){
 
              var sel_agency = data.filter(function(entry){ //filters the data by agency name
                if (entry.Agency == agency.name){

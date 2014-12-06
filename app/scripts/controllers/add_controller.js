@@ -99,28 +99,17 @@
 
             var uptData = results[0];
 
-            //console.log(results);
-
             var month = results[1];
-            //console.log(month)
-
-            //d3.select(".chart").append("svg").attr("width", 100).attr("height", 100).append("circle").attr("cx", 25).attr("cy", 25).attr("r", 25).style("fill", "purple");
 
             var margin = {top: 20, right: 30, bottom: 30, left: 40},
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
-
 
             var x = d3.scale.ordinal()
             .rangeRoundBands([0, width], .1);
 
             var y = d3.scale.linear()
             .range([height, 0]);
-
-            var line = d3.svg.line()
-            .interpolate('cardinal')
-            .x(function(d) { return x(d.label)})
-            .y(function(d) { return y(d.value)});
 
             var xAxis = d3.svg.axis()
             .scale(x)
@@ -155,6 +144,21 @@
                 return d3.max(c.trips, function(max){ return max.upt;});
               })
               ]);
+
+            svg.append('g')
+                .attr('class', 'x axis')
+                .attr('transformt', 'translate (0, ' + height + ')')
+                .call(xAxis);
+
+            svg.append('g')
+                .attr('class', 'y axis')
+                .call(yAxis)
+              .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('y', 6)
+                .attr('dy', '.71em')
+                .style('text-anchor', 'end')
+                .text('Number of Rounds');
 
               // This renders the data
 

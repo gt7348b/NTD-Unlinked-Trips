@@ -102,8 +102,13 @@
         .scale(y)
         .orient('left');
 
+        var line = d3.svg.line()
+        .interpolate("cardinal")
+        .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+        .y(function (d) { return y(d.upt); });
 
-        // REMEMBER:  "+d.APR02" converts a string to a number
+        var color = d3.scale.ordinal()
+        .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
 
         var svg = d3.select('chart').append('svg')
         .attr('width', width + margin.left + margin.right)
@@ -119,7 +124,7 @@
             }
           });
 
-          console.log(response);
+          //console.log(response);
 
           var month = d3.keys(data[0])
               .filter(function(key){ return key!=='Modes'})
@@ -131,7 +136,7 @@
               .filter(function(key){ return key!=='UZA Name'})
               .filter(function(key){ return key!=='TOS'});
 
-              console.log(month);
+            //  console.log(month);
 
           var uptData = response.map(function (t){
             return {
@@ -153,12 +158,25 @@
             d3.max(uptData, function(c){
               return d3.max(c.trips, function(max){ return max.upt;});
             })
-            ]);
+          ]);
 
-          svg.append('g')
-              .attr('class', 'x axis')
-              .attr('transform', 'translate(0, ' + height +')')
-              .call(xAxis);
+          var trips = svg.selectAll('.chart')
+              .data(uptData)
+            .enter().append('g')
+              .attr('class', 'chart');
+
+          trips.append('path')
+            .attr('class', 'line')
+            .attr('d', function(d) {return line(d.trips);})
+            .style('stroke', function(d) { return color(d.Modes);})
+            .style('stroke-width', '2em')
+            .style('fill', 'none');
+
+          // svg.append('g')
+          //     .attr('class', 'x axis')
+          //     .attr('transform', 'translate(0, ' + height +')')
+          //     .call(xAxis);
+
 
           deferred.resolve(response);
 

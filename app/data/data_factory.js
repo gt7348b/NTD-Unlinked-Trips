@@ -100,15 +100,63 @@
 
         console.log(agency);
 
-        var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+        var response = [];
+        var deferred = $q.defer();
 
-        //  ntd_data.forEach(function(entry){
+        var data = d3.csv('data/September 2014 Adjusted Database/VRH-Table 1.csv', function(error, data){
 
-          //  if (entry.UZA_NAME == modes.name)
+          var sel_agency = data.filter(function(entry){ //filters the data by agency name
+            if (entry.Agency == agency.name){
+              response.push(entry);  //adds the data to the response array
+            }
+          });
 
-          //});
+          // This creates an array of months
+
+          var month = d3.keys(data[0])
+          .filter(function(key){ return key!=='Modes'})
+          .filter(function(key){ return key!=='NTDID'})
+          .filter(function(key){ return key!=='Agency'})
+          .filter(function(key){ return key!=='Active'})
+          .filter(function(key){ return key!=='SSW'})
+          .filter(function(key){ return key!=='UZA'})
+          .filter(function(key){ return key!=='UZA Name'})
+          .filter(function(key){ return key!=='TOS'});
+
+          var modes = response.map(function(m){
+            return {
+              mode: m.Modes
+            }
+
+          });
+
+          // This creates an array used to call render the data
+          var vrhData = response.map(function (t){
+            return {
+              agency: t.Agency,
+              mode:   t.Modes,
+              region: t.UZA,
+              trips: month.map(function(d){
+                return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
+              })
+            };
+          });
+
+          console.log(vrhData);
+
+          var cleandata = [];
+
+          cleandata.push(vrhData);
+
+          cleandata.push(month);
+
+          cleandata.push(modes);
+
+          deferred.resolve(cleandata);
 
         });
+
+        return deferred.promise;
 
       };
 

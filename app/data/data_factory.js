@@ -96,9 +96,9 @@
        };
 
 
-      var selectModes = function(modes){
+      var vehicleHours = function(agency){
 
-        console.log(modes);
+        console.log(agency);
 
         var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
 
@@ -115,7 +115,7 @@
       return {
         searchAgency: searchAgency,
         searchMSA:    searchMSA,
-        selectModes:  selectModes,
+        vehicleHours:  vehicleHours,
         }
 
     }]);

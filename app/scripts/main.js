@@ -25,7 +25,7 @@ console.log('Roscoes a cutie');
         controller: 'AddController'
       });
 
-      $routeProvider.when('/mode', {
+      $routeProvider.when('/vrh', {
         templateUrl:'templates/mode.html',
         controller:'AddController'
       });

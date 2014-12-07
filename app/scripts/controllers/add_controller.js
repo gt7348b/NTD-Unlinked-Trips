@@ -137,10 +137,11 @@
           });
         };
 
-        $scope.selectModes = function(modes){
-          DataFactory.selectModes(modes);
+        $scope.vehicleHours = function(agency){
+          DataFactory.vehicleHours(agency).then(function(results){
+            $scope.agencies = results;
+          });
         };
-
 
       }]);
 

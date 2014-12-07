@@ -12,9 +12,15 @@ body {
 
 .container{
   @include outer-container;
+  @include margin(1em 0em 1em 0em);
   $medium: new-breakpoint(max-width 750px 12);
   $mobile: new-breakpoint(max-width 600px 6);
 
+  .header{
+
+    background-image: url(images/Ottiginies - Departure Board.JPG);
+
+  }
   .footer {
     background-color: white;
 
@@ -35,16 +41,15 @@ body {
 
     .hero-unit {
       margin: 50px auto 0 auto;
-      width: 600px;
       font-size: 18px;
       font-weight: 200;
       line-height: 30px;
-      background-color: #eee;
+      //background-color: #eee;
       border-radius: 6px;
       padding: 60px;
 
       h1 {
-        font-size: 60px;
+        font-size: 4em;
         line-height: 1;
         letter-spacing: -1px;
       }
@@ -66,7 +71,6 @@ body {
         margin: 1px;
         color: white;
       }
-
 
       .axis path,
       .axis line {

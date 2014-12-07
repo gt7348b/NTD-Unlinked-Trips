@@ -4,7 +4,7 @@ console.log('Roscoes a cutie');
 
   angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
-      'DATA_SOURCE': src='data/UPT_2.json'
+      'DATA_SOURCE': src='data/September 2014 Adjusted Database/UPT-Table 1.csv'
     })
 
 
@@ -25,12 +25,12 @@ console.log('Roscoes a cutie');
         controller: 'AddController'
       });
 
-      $routeProvider.when('/mode', {
+      $routeProvider.when('/vrh', {
         templateUrl:'templates/mode.html',
         controller:'AddController'
       });
 
-      $routeProvider.when('/msa', {
+      $routeProvider.when('/tripshour', {
         templateUrl: 'templates/msa.html',
         controller: 'AddController'
       });

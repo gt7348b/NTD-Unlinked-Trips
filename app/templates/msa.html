@@ -1,14 +1,20 @@
-<form ng-submit='searchMSA(msa)'>
-  <input type='text' ng-model='msa.region' placeholder='Enter Name of Region'/>
+<form ng-submit='tripsPerhour(agency)'>
+  <input type='text' ng-model='agency.name' placeholder='Enter Full Agency Name'/>
   <button>Submit</button>
 </form>
 
-<div class='msa_results'>
-  {{data}}
-  <ul>Regional Search Results
-    <li ng-repeat="agency in agencies">
-      {{ agency.MODES }} operated by {{ agency.AGENCY }}
-    </li>
+<!-- This section displays the list of agencies from the search -->
+<div class='results'>
 
+  <!-- This section displays the Chart from the search -->
+
+  <div class='chart'>
+    <h4>{{ agency }}</h4>
+  </div>
+
+  <ul>Agency Search Results
+    <li ng-repeat="agency in agencies">
+      {{ agency.agency }} in {{ agency.region }} operates {{ agency.mode }}
+    </li>
   </ul>
 </div>

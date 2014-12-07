@@ -64,6 +64,8 @@
 
              cleandata.push(modes);
 
+             cleandata.push(response);
+
              deferred.resolve(cleandata);
 
            });
@@ -72,27 +74,22 @@
 
        };
 
-       var searchMSA = function(msa){
-         console.log(msa);
+       var tripsPerhour = function(uptData, vrhData, month){
+         console.log(uptData);
+         console.log(vrhData);
+         console.log(month);
 
-         var msa_filter = [];
-         var deferred = $q.defer();
-
-         $.getJSON(DATA_SOURCE).done(function(ntd_data){
-
-           ntd_data.forEach(function(entry){
-
-             if (entry.UZA_NAME == msa.region){
-
-               msa_filter.push(entry); //Adds results to array
-
-             }   // This is the return of the if
-           });
-           console.log(msa_filter);
-           //return msa_filter;
-           deferred.resolve(msa_filter);
+         var tripspervrh = uptData.map(function(t){
+           return {
+            agency: t.Agency,
+            region: t.UZA,
+            mode: t.Modes,
+            tripsperhour: month.map(function(d){
+              return {month: d, triphour: +t[d].replace(/,/g, '')}
+            })
+           }
          });
-         return deferred.promise;
+         return uptData;
        };
 
 
@@ -152,6 +149,8 @@
 
           cleandata.push(modes);
 
+          cleandata.push(response);
+
           deferred.resolve(cleandata);
 
         });
@@ -162,8 +161,8 @@
 
       return {
         searchAgency: searchAgency,
-        searchMSA:    searchMSA,
-        vehicleHours:  vehicleHours,
+        tripsPerhour: tripsPerhour,
+        vehicleHours: vehicleHours,
         }
 
     }]);

@@ -129,10 +129,20 @@
 
         };
 
-        $scope.searchMSA = function(msa){
-          DataFactory.searchMSA(msa).then(function(results){
-            $scope.agencies = results;
+        $scope.tripsPerhour = function(agency){
+          DataFactory.searchAgency(agency).then(function(results){
+            var uptData = results[3];
+            var month = results[1];
+
+            DataFactory.vehicleHours(agency).then(function(results){
+              var vrhData = results[3];
+
+              DataFactory.tripsPerhour(uptData, vrhData, month);
+
+            });
+
           });
+
         };
 
         $scope.vehicleHours = function(agency){

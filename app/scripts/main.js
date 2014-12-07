@@ -30,7 +30,7 @@ console.log('Roscoes a cutie');
         controller:'AddController'
       });
 
-      $routeProvider.when('/msa', {
+      $routeProvider.when('/tripshour', {
         templateUrl: 'templates/msa.html',
         controller: 'AddController'
       });

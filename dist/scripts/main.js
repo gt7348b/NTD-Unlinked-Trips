@@ -4,7 +4,7 @@ console.log('Roscoes a cutie');
 
   angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
-      'DATA_SOURCE': src='data/UPT_2.json'
+      'DATA_SOURCE': src='data/September 2014 Adjusted Database/UPT-Table 1.csv'
     })
 
 
@@ -25,12 +25,12 @@ console.log('Roscoes a cutie');
         controller: 'AddController'
       });
 
-      $routeProvider.when('/mode', {
+      $routeProvider.when('/vrh', {
         templateUrl:'templates/mode.html',
         controller:'AddController'
       });
 
-      $routeProvider.when('/msa', {
+      $routeProvider.when('/tripshour', {
         templateUrl: 'templates/msa.html',
         controller: 'AddController'
       });
@@ -66,54 +66,255 @@ console.log('Roscoes a cutie');
 
         $scope.searchAgency = function(agency){
           DataFactory.searchAgency(agency).then(function(results){
+            $scope.agencies = results[0];
 
-            $scope.agencies = results;
+            var uptData = results[0];
 
-            var width = 960,
-                height = 500;
+            var month = results[1];
+
+            var modes = ['CR', 'DR', 'HR', 'LR', 'MB', 'FB', 'TB'];
+            console.log(modes);
+
+            var color = d3.scale.ordinal()
+            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c", 'green', 'steelblue']);
+
+
+            color.domain(modes);
+
+            var margin = {top: 20, right: 50, bottom: 30, left: 75},
+            width = 1500 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
 
             var x = d3.scale.ordinal()
-                .rangeRoundBands([0, width], .1);
+            .rangeRoundBands([0, width], .1);
 
             var y = d3.scale.linear()
-                .range([height, 0]);
+            .range([height, 0]);
 
             var xAxis = d3.svg.axis()
-                .scale(x)
-                .orient('bottom');
+            .scale(x)
+            .orient('bottom');
 
-                d3.select(".chart")
-                .selectAll("div")
-                .data(results)
-                .enter().append("div")
-                .style("width", function(d) { return y(d) + "px"; })
-                .text(function(d) { return d; });
+            var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient('left');
 
-        //    chart.append('x')
-          //      .attr('class', 'x axis')
-                //.attr('transform', 'translate(0,' + height')')
-            //    .call(xAxis);
+            var line = d3.svg.line()
+            .interpolate("cardinal")
+            .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+            .y(function (d) { return y(d.upt); });
 
-            console.log(d3.selectAll(results));
+            var color = d3.scale.ordinal()
+            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
 
-    //        d3.select(results, function(error, data){
-    //          console.log("I'm in the d3.select function");
-    //        })
+            // This creates the svg object
+
+            var svg = d3.select('.chart').append('svg')
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .append('g')
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            // This defines the axes
+
+            x.domain(month.map(function(d){ return d }));
+            y.domain([
+              d3.min(uptData, function(c){
+                return d3.min(c.trips, function(min){ return min.upt;});
+              }),
+              d3.max(uptData, function(c){
+                return d3.max(c.trips, function(max){ return max.upt;});
+              })
+              ]);
+
+            // This renders the axes
+
+            svg.append('g')
+                .attr('class', 'x axis')
+                .attr('transform', 'translate (0, ' + height + ')')
+                .call(xAxis);
+
+            svg.append('g')
+                .attr('class', 'y axis')
+                .call(yAxis)
+              .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('y', 6)
+                .attr('dy', '.71em')
+                .style('text-anchor', 'end')
+                .text('Number of Unlinked Passenger Trips');
+
+              // This renders the data
+
+              var trips = svg.selectAll('.chart')
+              .data(uptData)
+              .enter().append('g')
+              .attr('class', 'chart');
+
+              trips.append('path')
+              .attr('class', 'line')
+              .attr('d', function(d) {return line(d.trips);})
+              .style('stroke', function(d) { return color(d.Modes);})
+              .style('stroke-width', '.2em')
+              .style('fill', 'none');
+
+              var legend = svg.selectAll('.legend')
+                  .data(modes.slice().reverse())
+                .enter().append('g')
+                  .attr('class', 'legend')
+                  .attr('transform', function(d, i){
+                    return 'translate(55, ' + i * 20 + ')';
+                  });
+
+              legend.append('rect')
+                  .attr('x', width - 10)
+                  .attr('width', 10)
+                  .attr('height', 10)
+                  .style('fill', color)
+                  .style('stroke', 'grey');
+
+              legend.append('text')
+                  .attr('x', width - 12)
+                  .attr('y', 6)
+                  .attr('dy', '.35em')
+                  .style('text-anchor', 'end')
+                  .text(function(d){ return d;});
+          });
+
+        };
+
+        $scope.tripsPerhour = function(agency){
+          DataFactory.searchAgency(agency).then(function(results){
+            var uptData = results[3];
+            var month = results[1];
+
+            DataFactory.vehicleHours(agency).then(function(results){
+              var vrhData = results[3];
+
+              DataFactory.tripsPerhour(uptData, vrhData, month);
+
+            });
 
           });
 
         };
 
-        $scope.searchMSA = function(msa){
-          DataFactory.searchMSA(msa).then(function(results){
-            $scope.agencies = results;
-          });
-        };
+        $scope.vehicleHours = function(agency){
+          DataFactory.vehicleHours(agency).then(function(results){
+            $scope.agencies = results[0];
 
-        $scope.selectModes = function(modes){
-          DataFactory.selectModes(modes);
-        };
+            var vrhData = results[0];
 
+            var month = results[1];
+
+            var modes = ['CR', 'DR', 'HR', 'LR', 'MB', 'FB', 'TB'];
+            console.log(modes);
+
+            var color = d3.scale.ordinal()
+            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c", 'green', 'steelblue']);
+
+            color.domain(modes);
+
+            var margin = {top: 20, right: 50, bottom: 30, left: 75},
+            width = 1500 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+
+            var x = d3.scale.ordinal()
+            .rangeRoundBands([0, width], .1);
+
+            var y = d3.scale.linear()
+            .range([height, 0]);
+
+            var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient('bottom');
+
+            var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient('left');
+
+            var line = d3.svg.line()
+            .interpolate("cardinal")
+            .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+            .y(function (d) { return y(d.upt); });
+
+            var color = d3.scale.ordinal()
+            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
+
+            // This creates the svg object
+
+            var svg = d3.select('.chart').append('svg')
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .append('g')
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            // This defines the axes
+
+            x.domain(month.map(function(d){ return d }));
+            y.domain([
+              d3.min(vrhData, function(c){
+                return d3.min(c.trips, function(min){ return min.upt;});
+              }),
+              d3.max(vrhData, function(c){
+                return d3.max(c.trips, function(max){ return max.upt;});
+              })
+              ]);
+
+              // This renders the axes
+
+              svg.append('g')
+              .attr('class', 'x axis')
+              .attr('transform', 'translate (0, ' + height + ')')
+              .call(xAxis);
+
+              svg.append('g')
+              .attr('class', 'y axis')
+              .call(yAxis)
+              .append('text')
+              .attr('transform', 'rotate(-90)')
+              .attr('y', 6)
+              .attr('dy', '.71em')
+              .style('text-anchor', 'end')
+              .text('Number of Vehicle Revenue Miles');
+
+              // This renders the data
+
+              var trips = svg.selectAll('.chart')
+              .data(vrhData)
+              .enter().append('g')
+              .attr('class', 'chart');
+
+              trips.append('path')
+              .attr('class', 'line')
+              .attr('d', function(d) {return line(d.trips);})
+              .style('stroke', function(d) { return color(d.Modes);})
+              .style('stroke-width', '.2em')
+              .style('fill', 'none');
+
+              var legend = svg.selectAll('.legend')
+              .data(modes.slice().reverse())
+              .enter().append('g')
+              .attr('class', 'legend')
+              .attr('transform', function(d, i){
+                return 'translate(55, ' + i * 20 + ')';
+              });
+
+              legend.append('rect')
+              .attr('x', width - 10)
+              .attr('width', 10)
+              .attr('height', 10)
+              .style('fill', color)
+              .style('stroke', 'grey');
+
+              legend.append('text')
+              .attr('x', width - 12)
+              .attr('y', 6)
+              .attr('dy', '.35em')
+              .style('text-anchor', 'end')
+              .text(function(d){ return d;});
+            });
+        };
 
       }]);
 
@@ -127,78 +328,165 @@ console.log('Roscoes a cutie');
     .factory('DataFactory', ['$q','$location','DATA_SOURCE',
       function($q, $location, DATA_SOURCE){
 
-
        var searchAgency = function(agency){
            console.log(agency);
 
            var response = [];
            var deferred = $q.defer();
 
-           $.getJSON(DATA_SOURCE).done(function(ntd_data){
+           var data = d3.csv(DATA_SOURCE, function(error, data){
 
-             var sel_agency = ntd_data.filter(function(entry){ //filters the data by agency name
-               if (entry.AGENCY == agency.name){
+             var sel_agency = data.filter(function(entry){ //filters the data by agency name
+               if (entry.Agency == agency.name){
                  response.push(entry);  //adds the data to the response array
-                 }
-                });
+               }
+             });
 
-             console.log(response);
-             //return response;
-             deferred.resolve(response);
+             //console.log(response);
 
-           //}).done(function(response){
-             //return $location.path('/results');
+             // This creates an array of months
 
-         });
+             var month = d3.keys(data[0])
+             .filter(function(key){ return key!=='Modes'})
+             .filter(function(key){ return key!=='NTDID'})
+             .filter(function(key){ return key!=='Agency'})
+             .filter(function(key){ return key!=='Active'})
+             .filter(function(key){ return key!=='SSW'})
+             .filter(function(key){ return key!=='UZA'})
+             .filter(function(key){ return key!=='UZA Name'})
+             .filter(function(key){ return key!=='TOS'});
 
-         return deferred.promise;
-       };
+             //  console.log(month);
 
-       var searchMSA = function(msa){
-         console.log(msa);
+            var modes = response.map(function(m){
+              return {
+                mode: m.Modes
+              }
 
-         var msa_filter = [];
-         var deferred = $q.defer();
+            });
 
-         $.getJSON(DATA_SOURCE).done(function(ntd_data){
+             console.log(modes);
+              // This creates an array used to call render the data
+             var uptData = response.map(function (t){
+               return {
+                 agency: t.Agency,
+                 mode:   t.Modes,
+                 region: t.UZA,
+                 trips: month.map(function(d){
+                   return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
+                 })
+               };
+             });
 
-           ntd_data.forEach(function(entry){
+             console.log(uptData);
 
-             if (entry.UZA_NAME == msa.region){
+             var cleandata = [];
 
-               msa_filter.push(entry); //Adds results to array
+             cleandata.push(uptData);
 
-             }   // This is the return of the if
+             cleandata.push(month);
+
+             cleandata.push(modes);
+
+             cleandata.push(response);
+
+             deferred.resolve(cleandata);
+
            });
-           console.log(msa_filter);
-           //return msa_filter;
-           deferred.resolve(msa_filter);
+
+           return deferred.promise;
+
+       };
+
+       var tripsPerhour = function(uptData, vrhData, month){
+         console.log(uptData);
+         console.log(vrhData);
+         console.log(month);
+
+         var tripspervrh = uptData.map(function(t){
+           return {
+            agency: t.Agency,
+            region: t.UZA,
+            mode: t.Modes,
+            tripsperhour: month.map(function(d){
+              return {month: d, triphour: +t[d].replace(/,/g, '')}
+            })
+           }
          });
-         return deferred.promise;
+         return uptData;
        };
 
 
-      var selectModes = function(modes){
+      var vehicleHours = function(agency){
 
-        console.log(modes);
+        console.log(agency);
 
-        var data = $.getJSON(DATA_SOURCE).done(function(ntd_data){
+        var response = [];
+        var deferred = $q.defer();
 
-        //  ntd_data.forEach(function(entry){
+        var data = d3.csv('data/September 2014 Adjusted Database/VRH-Table 1.csv', function(error, data){
 
-          //  if (entry.UZA_NAME == modes.name)
+          var sel_agency = data.filter(function(entry){ //filters the data by agency name
+            if (entry.Agency == agency.name){
+              response.push(entry);  //adds the data to the response array
+            }
+          });
 
-          //});
+          // This creates an array of months
+
+          var month = d3.keys(data[0])
+          .filter(function(key){ return key!=='Modes'})
+          .filter(function(key){ return key!=='NTDID'})
+          .filter(function(key){ return key!=='Agency'})
+          .filter(function(key){ return key!=='Active'})
+          .filter(function(key){ return key!=='SSW'})
+          .filter(function(key){ return key!=='UZA'})
+          .filter(function(key){ return key!=='UZA Name'})
+          .filter(function(key){ return key!=='TOS'});
+
+          var modes = response.map(function(m){
+            return {
+              mode: m.Modes
+            }
+
+          });
+
+          // This creates an array used to call render the data
+          var vrhData = response.map(function (t){
+            return {
+              agency: t.Agency,
+              mode:   t.Modes,
+              region: t.UZA,
+              trips: month.map(function(d){
+                return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
+              })
+            };
+          });
+
+          console.log(vrhData);
+
+          var cleandata = [];
+
+          cleandata.push(vrhData);
+
+          cleandata.push(month);
+
+          cleandata.push(modes);
+
+          cleandata.push(response);
+
+          deferred.resolve(cleandata);
 
         });
 
-      };
+        return deferred.promise;
 
+      };
 
       return {
         searchAgency: searchAgency,
-        searchMSA:    searchMSA,
-        selectModes:  selectModes,
+        tripsPerhour: tripsPerhour,
+        vehicleHours: vehicleHours,
         }
 
     }]);

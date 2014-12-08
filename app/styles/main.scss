@@ -63,12 +63,16 @@ body {
         color: white;
       }
 
+      .legend {
+        @include padding (0, .5em, 0, 0);
+      }
+
       .chart svg {
         font: 10px sans-serif;
         fill: green;
         text-align: left;
         padding: 3px;
-        margin: 1px;
+        margin: 1px
         color: white;
       }
 

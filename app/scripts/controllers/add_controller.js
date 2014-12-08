@@ -48,15 +48,6 @@
             .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
             .y(function (d) { return y(d.upt); });
 
-            //This function creates the grid lines
-
-            function make_y_axis(){
-              return d3.svg.axis()
-                  .scale(y)
-                  .orient('left')
-                  .ticks(5)
-            };
-
             // This creates the svg object
 
             var svg = d3.select('.chart').append('svg')
@@ -106,13 +97,6 @@
 
               // This renders the grid
 
-              // svg.append('g')
-              //       .attr('class', 'grid')
-              //       .call(make_y_axis()
-              //             .tickSize(-width, 0, 0)
-              //             .tickFormat('')
-              //           );
-
               svg.selectAll('line.y')
                   .data(y.ticks(10))
                   .enter().append('line')
@@ -143,7 +127,7 @@
                 .enter().append('g')
                   .attr('class', 'legend')
                   .attr('transform', function(d, i){
-                    return 'translate(55, ' + i * 30 + ')';
+                    return 'translate(25, ' + i * 30 + ')';
                   });
 
               legend.append('rect')
@@ -195,7 +179,7 @@
 
             color.domain(modes);
 
-            var margin = {top: 20, right: 50, bottom: 30, left: 75},
+            var margin = {top: 20, right: 50, bottom: 30, left: 60},
             width = 1500 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
@@ -268,6 +252,18 @@
                   .style('text-anchor', 'end')
                   .text('Number of Vehicle Revenue Miles');
 
+                  // This renders the grid
+
+                  svg.selectAll('line.y')
+                  .data(y.ticks(10))
+                  .enter().append('line')
+                  .attr('class', 'y')
+                  .attr('x1', 0)
+                  .attr('x2', width)
+                  .attr('y1', y)
+                  .attr('y2', y)
+                  .style('stroke', '#ccc');
+
               // This renders the data
 
               var trips = svg.selectAll('.chart')
@@ -278,7 +274,7 @@
               trips.append('path')
               .attr('class', 'line')
               .attr('d', function(d) {return line(d.trips);})
-              .style('stroke', function(d) { return color(d.Modes);})
+              .style('stroke', function(d) { return color(d.mode);})
               .style('stroke-width', '.2em')
               .style('fill', 'none');
 
@@ -287,7 +283,7 @@
               .enter().append('g')
               .attr('class', 'legend')
               .attr('transform', function(d, i){
-                return 'translate(55, ' + i * 20 + ')';
+                return 'translate(25, ' + i * 20 + ')';
               });
 
               legend.append('rect')

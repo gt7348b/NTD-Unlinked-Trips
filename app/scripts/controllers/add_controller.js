@@ -25,7 +25,7 @@
 
             color.domain(modes);
 
-            var margin = {top: 20, right: 50, bottom: 30, left: 75},
+            var margin = {top: 20, right: 50, bottom: 75, left: 75},
             width = 1500 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
@@ -73,11 +73,21 @@
             svg.append('g')
                 .attr('class', 'x axis')
                 .attr('transform', 'translate (0, ' + height + ')')
-                .call(xAxis);
+                .call(xAxis)
+                .selectAll('text')
+                    .style('text-anchor', 'end')
+                    .style('font-size', '.45em')
+                    .attr('dx', '-.8em')
+                    .attr('dy', '.15em')
+                    .attr('transform', function(d){
+                        return 'rotate(-65)'
+                    });
 
             svg.append('g')
                 .attr('class', 'y axis')
                 .call(yAxis)
+                .selectAll('text')
+                .style('font-size', '.8em')
               .append('text')
                 .attr('transform', 'rotate(-90)')
                 .attr('y', 6)
@@ -104,7 +114,7 @@
                 .enter().append('g')
                   .attr('class', 'legend')
                   .attr('transform', function(d, i){
-                    return 'translate(55, ' + i * 20 + ')';
+                    return 'translate(55, ' + i * 30 + ')';
                   });
 
               legend.append('rect')
@@ -117,7 +127,7 @@
               legend.append('text')
                   .attr('x', width - 12)
                   .attr('y', 6)
-                  .attr('dy', '.35em')
+                  .attr('dy', '.5em')
                   .style('text-anchor', 'end')
                   .text(function(d){ return d;});
           });

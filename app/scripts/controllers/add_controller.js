@@ -48,6 +48,15 @@
             .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
             .y(function (d) { return y(d.upt); });
 
+            //This function creates the grid lines
+
+            function make_y_axis(){
+              return d3.svg.axis()
+                  .scale(y)
+                  .orient('left')
+                  .ticks(5)
+            };
+
             // This creates the svg object
 
             var svg = d3.select('.chart').append('svg')
@@ -94,6 +103,26 @@
                 .attr('dy', '.71em')
                 .style('text-anchor', 'end')
                 .text('Number of Unlinked Passenger Trips');
+
+              // This renders the grid
+
+              // svg.append('g')
+              //       .attr('class', 'grid')
+              //       .call(make_y_axis()
+              //             .tickSize(-width, 0, 0)
+              //             .tickFormat('')
+              //           );
+
+              svg.selectAll('line.y')
+                  .data(y.ticks(10))
+                  .enter().append('line')
+                  .attr('class', 'y')
+                  .attr('x1', 0)
+                  .attr('x2', width)
+                  .attr('y1', y)
+                  .attr('y2', y)
+                  .style('stroke', '#ccc');
+
 
               // This renders the data
 

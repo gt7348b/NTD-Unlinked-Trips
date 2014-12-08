@@ -79,6 +79,16 @@ body {
         shape-rendering: crispEdges;
       }
 
+      .grid .tick{
+        stroke: gray;
+        opacity: 0.7;
+        shape-rendering: crispEdges;
+      }
+
+      .grid path{
+        stroke-width: 0;
+      }
+
     }
 
 }

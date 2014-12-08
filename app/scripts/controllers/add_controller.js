@@ -19,11 +19,9 @@
             var month = results[1];
 
             var modes = ['CR', 'DR', 'HR', 'LR', 'MB', 'FB', 'TB'];
-            console.log(modes);
 
             var color = d3.scale.ordinal()
             .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c", 'green', 'steelblue']);
-
 
             color.domain(modes);
 
@@ -49,9 +47,6 @@
             .interpolate("cardinal")
             .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
             .y(function (d) { return y(d.upt); });
-
-            var color = d3.scale.ordinal()
-            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
 
             // This creates the svg object
 
@@ -100,7 +95,7 @@
               trips.append('path')
               .attr('class', 'line')
               .attr('d', function(d) {return line(d.trips);})
-              .style('stroke', function(d) { return color(d.Modes);})
+              .style('stroke', function(d) { return color(d.mode);})
               .style('stroke-width', '.2em')
               .style('fill', 'none');
 

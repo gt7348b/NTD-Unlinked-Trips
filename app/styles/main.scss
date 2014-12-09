@@ -18,7 +18,20 @@ body {
 
   .header{
 
-    background-image: url(images/Ottiginies - Departure Board.JPG);
+    color: black;
+    text-align: center;
+    background-color: orange;
+    opacity: 0.7;
+
+    li{
+      display: inline-block;
+    }
+
+
+    a {
+      text-decoration: none;
+      @include padding(0, 1em, 0, 1em);
+    }
 
   }
   .footer {
@@ -63,16 +76,12 @@ body {
         color: white;
       }
 
-      .legend {
-        @include padding (0, .5em, 0, 0);
-      }
-
       .chart svg {
         font: 10px sans-serif;
         fill: green;
         text-align: left;
         padding: 3px;
-        margin: 1px
+        margin: 1px;
         color: white;
       }
 

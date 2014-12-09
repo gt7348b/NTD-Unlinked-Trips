@@ -41,7 +41,28 @@
 
             });
 
-             console.log(modes);
+
+            var tripsArr = [];
+
+            //
+
+            // month.forEach(function(number){
+            //   tripmonth[number] = {month: number, trips: []};
+            //   tripsArr.push(tripmonth[number]);
+            // })
+
+            // response.forEach(function(d){
+            //
+            //   month.map(function(trips){
+            //
+            //     tripmonth[trips].trips.push({month: trips, upt: +d[trips].replace(/,/g, '')});
+            //
+            //   });
+            //
+            // });
+
+            //stack(tripsArr);
+
               // This creates an array used to call render the data
              var uptData = response.map(function (t){
                return {
@@ -54,7 +75,7 @@
                };
              });
 
-             console.log(uptData);
+             //console.log(uptData);
 
              var cleandata = [];
 
@@ -65,6 +86,8 @@
              cleandata.push(modes);
 
              cleandata.push(response);
+
+             cleandata.push(tripsArr);
 
              deferred.resolve(cleandata);
 
@@ -79,16 +102,30 @@
          console.log(vrhData);
          console.log(month);
 
-         var tripspervrh = uptData.map(function(t){
+
+         var uptnumeric = uptData.map(function(t){
            return {
-            agency: t.Agency,
-            region: t.UZA,
-            mode: t.Modes,
-            tripsperhour: month.map(function(d){
-              return {month: d, triphour: +t[d].replace(/,/g, '')}
+
+            monthtrips: month.map(function(d){
+              return{month: d, trips: +t[d].replace(/,/g, "")}
             })
+
            }
+
          });
+
+         console.log(uptnumeric);
+
+        //  var tripspervrh = uptData.map(function(t){
+        //    return {
+        //     agency: t.Agency,
+        //     region: t.UZA,
+        //     mode: t.Modes,
+        //     tripsperhour: month.map(function(d){
+        //       return {month: d, triphour: +t[d].replace(/,/g, '')}
+        //     })
+        //    }
+        //  });
          return uptData;
        };
 

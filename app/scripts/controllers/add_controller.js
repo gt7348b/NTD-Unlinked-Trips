@@ -18,6 +18,12 @@
 
             var month = results[1];
 
+            var tripsArr = results[4];
+
+            //console.log(tripsArr);
+
+            //stack(tripsArr);
+
             var modes = ['CR', 'DR', 'HR', 'LR', 'MB', 'FB', 'TB'];
 
             var color = d3.scale.ordinal()
@@ -59,6 +65,11 @@
             // This defines the axes
 
             x.domain(month.map(function(d){ return d }));
+
+            //This is for stacked bar
+            //y.domain([0, d3.max(tripsArr, function(d){return d.total})]);
+
+            // This is for line chart
             y.domain([
               d3.min(uptData, function(c){
                 return d3.min(c.trips, function(min){ return min.upt;});
@@ -110,6 +121,8 @@
 
               // This renders the data
 
+
+              // This section renders a line chart
               var trips = svg.selectAll('.chart')
               .data(uptData)
               .enter().append('g')
@@ -122,6 +135,28 @@
               .style('stroke-width', '.2em')
               .style('fill', 'none');
 
+              // This renders stacked bar NOT WORKING
+              // var selection = svg.selectAll('.chart')
+              //       .data(tripsArr)
+              //     .enter().append('g')
+              //       .attr('class', 'trips')
+              //       .attr('transform', function(d){
+              //         console.log(d);
+              //         console.log(x(month));
+              //         return 'translate(' + x(month) + ', 0)'
+              //       });
+              //
+              // selection.selectAll('rect')
+              //     .data(function(d){ return d.mapping;})
+              //   .enter().append('rect')
+              //     .attr('width', x.rangeBand())
+              //     .attr('y', function(d){ return y(d.y1); })
+              //     .attr('height', function (d){ return y(d.y0) - y(d.y1); })
+              //     .style('fill', function(d) {return color(d.Modes); })
+              //     .style('stroke', 'grey');
+
+
+              // This creates the legend
               var legend = svg.selectAll('.legend')
                   .data(modes.slice().reverse())
                 .enter().append('g')

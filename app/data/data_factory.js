@@ -246,13 +246,11 @@
               agency: t.Agency,
               mode:   t.Modes,
               region: t.UZA,
-              trips: month.map(function(d){
+              miles: month.map(function(d){
                 return {month: d, vehmiles: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })
             };
           });
-
-          console.log(vrmData);
 
           var cleandata = [];
 

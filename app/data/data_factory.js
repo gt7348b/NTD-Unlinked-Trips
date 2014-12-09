@@ -97,9 +97,9 @@
 
        };
 
-       var tripsPerhour = function(uptData, vrhData, month){
+       var tripsPerhour = function(uptData, vrmData, month){
          console.log(uptData);
-         console.log(vrhData);
+         console.log(vrmData);
          console.log(month);
 
 
@@ -113,18 +113,18 @@
            }
          });
 
-         var vrhnumeric = vrhData.map(function(t){
+         var vrmnumeric = vrmData.map(function(t){
            return {
              agency: t.Agencies,
              mode: t.Modes,
              monthtrips: month.map(function(d){
                console.log(t[d]);
-               return{month: d, trips: +t[d].replace(/,/g, "")}
+               return{month: d, miles: +t[d].replace(/,/g, "")}
              })
            }
          });
          console.log(uptnumeric);
-         console.log(vrhnumberic);
+         console.log(vrmnumberic);
 
         //  var tripspervrh = uptData.map(function(t){
         //    return {

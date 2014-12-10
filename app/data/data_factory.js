@@ -43,25 +43,24 @@
 
 
             var tripsArr = [];
+            var tripmonth= {};
 
-            //
+            //This section cleans Data for stacked area
 
-            // month.forEach(function(number){
-            //   tripmonth[number] = {month: number, trips: []};
-            //   tripsArr.push(tripmonth[number]);
-            // })
+            month.forEach(function(number){
+              tripmonth[number] = {month: number, trips: []};
+              tripsArr.push(tripmonth[number]);
+            })
 
-            // response.forEach(function(d){
-            //
-            //   month.map(function(trips){
-            //
-            //     tripmonth[trips].trips.push({month: trips, upt: +d[trips].replace(/,/g, '')});
-            //
-            //   });
-            //
-            // });
+            response.forEach(function(d){
 
-            //stack(tripsArr);
+              month.map(function(trips){
+
+                tripmonth[trips].trips.push({mode: d.Modes, month: trips, upt: +d[trips].replace(/,/g, '')});
+
+              });
+
+            });
 
               // This creates an array used to call render the data
              var uptData = response.map(function (t){
@@ -98,43 +97,56 @@
        };
 
        var tripsPerhour = function(uptData, month, vrhData){
-         console.log(uptData);
-         console.log(vrhData);
-         console.log(month);
+        //  console.log(uptData);
+        //  console.log(vrhData);
+        //  console.log(month);
 
-        //  var uptnumeric = uptDataArr.map(function(t){
+        //  var uptnumeric = uptData.map(function(t){
         //    return {
-        //     agency: t.Agencies,
+        //     agency: t.Agency,
         //     mode: t.Modes,
         //     monthtrips: month.map(function(d){
         //       return{month: d, trips: +t[d].replace(/,/g, "")}
         //     })
         //    }
         //  });
-
-        //  var vrmnumeric = vrmData.map(function(t){
-        //    return {
-        //      agency: t.Agencies,
+         //
+        //  var vrhnumeric = vrhData.map(function(t){
+        //   return {
+        //      agency: t.Agency,
         //      mode: t.Modes,
-        //      monthtrips: month.map(function(d){
-        //        console.log(t[d]);
-        //        return{month: d, miles: +t[d].replace(/,/g, "")}
+        //      monthhours: month.map(function(d){
+         //
+        //        if (t[d] !== undefined){
+        //          return {month: d, hours: +t[d].replace(/,/g, "")}
+        //       }
         //      })
         //    }
         //  });
         //  console.log(uptnumeric);
-         //console.log(vrmnumberic);
+        //  console.log(vrhnumeric);
 
-        //  var tripspervrh = uptData.map(function(t){
-        //    return {
-        //     agency: t.Agency,
-        //     region: t.UZA,
-        //     mode: t.Modes,
-        //     tripsperhour: month.map(function(d){
-        //       return {month: d, triphour: +t[d].replace(/,/g, '')}
-        //     })
-        //    }
-        //  });
+
+         var calctripspervrh = function(tripsArr, hoursArr){
+           console.log(tripsArr);
+           console.log(hoursArr);
+
+           return {
+            agency: tripsArr.Agency,
+            region: tripsArr.UZA,
+            mode: tripsArr.Modes,
+            tripsperhour: month.map(function(d){
+              if (hoursArr[d]!== undefined){
+                return {month: d, triphour: +tripsArr[d].replace(/,/g, '') - +hoursArr[d].replace(/,/g, '')}
+              }
+            })
+           }
+         };
+
+         var tripspervrh = calctripspervrh(uptData, vrhData);
+
+         console.log(tripspervrh)
+
          return uptData;
        };
 

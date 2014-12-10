@@ -5,7 +5,7 @@
       function($scope, $location, $rootScope, DataFactory){
 
 
-        console.log("hey - i'm in the add controller")
+//        console.log("hey - i'm in the add controller")
 
         $scope.searchAgency = function(agency){
 
@@ -55,10 +55,20 @@
             .orient('left');
 
             var line = d3.svg.line()
-            .interpolate("cardinal")
-            .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
-            .y(function (d) { return y(d.upt); });
+                .interpolate("cardinal")
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y(function (d) { return y(d.upt); });
 
+            var stack = d3.layout.stack()
+                .offset('zero')
+                .values(function(d){return d.trips; })
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y(function (d) { return y(d.upt); });
+
+            console.log(stack);
+            stack(tripsArr);
+
+            console.log(tripsArr);
             // This creates the svg object
 
             var svg = d3.select('.chart').append('svg')
@@ -66,6 +76,8 @@
             .attr('height', height + margin.top + margin.bottom)
             .append('g')
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 
             // This defines the axes
 

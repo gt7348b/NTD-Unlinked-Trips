@@ -5,7 +5,7 @@
       function($scope, $location, $rootScope, DataFactory){
 
 
-        console.log("hey - i'm in the add controller")
+//        console.log("hey - i'm in the add controller")
 
         $scope.searchAgency = function(agency){
 
@@ -55,9 +55,24 @@
             .orient('left');
 
             var line = d3.svg.line()
-            .interpolate("cardinal")
-            .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
-            .y(function (d) { return y(d.upt); });
+                .interpolate("cardinal")
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y(function (d) { return y(d.upt); });
+
+            var stack = d3.layout.stack()
+                .offset('zero')
+                .values(function(d){return d.trips; })
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y(function (d) { return y(d.upt); });
+
+            var area = d3.svg.area()
+                .interpolate('cardinal')
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y0(function (d) { return y(d.y0); })
+                .y1(function (d) { return y(d.y0 + d.y); });
+
+
+            stack(tripsArr);
 
             // This creates the svg object
 
@@ -66,6 +81,8 @@
             .attr('height', height + margin.top + margin.bottom)
             .append('g')
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 
             // This defines the axes
 
@@ -140,6 +157,20 @@
               .style('stroke-width', '.2em')
               .style('fill', 'none');
 
+
+              // console.log(tripsArr);
+              // // This section renders a stacked area
+              // var trips = svg.selectAll('.chart')
+              //     .data(tripsArr)
+              //     .enter().append('g')
+              //       .attr('class', 'chart')
+              //
+              // trips.append('path')
+              //     .attr('class', 'stackPath')
+              //     .attr('d', function (d) { return area(d.trips); })
+              //     .style('fill', function (d) {return color(d.month); })
+              //     .style('stroke', 'grey');
+
               // This renders stacked bar NOT WORKING
               // var selection = svg.selectAll('.chart')
               //       .data(tripsArr)
@@ -192,22 +223,24 @@
           d3.select("svg")
           .remove();
 
-          var uptDataArr =  DataFactory.searchAgency(agency).then(function(results){
-                return {
-                  uptData: results[3],
-                  month: results[1]
-                }
+          DataFactory.searchAgency(agency).then(function(results){
+              var uptData = results[3];
+
+              var month = results[1];
+
+              DataFactory.vehicleHours(agency).then(function(results){
+                var vrhData = results[3];
+
+                DataFactory.tripsPerhour(uptData, month, vrhData);
+
               });
+          });
 
-              var vrhData = DataFactory.vehicleHours(agency).then(function(results){
-                      return results[3];
-                    });
 
-              DataFactory.tripsPerhour(uptDataArr, vrhData);
+
+
 
               $scope.agency = null;
-
-
 
           };
 

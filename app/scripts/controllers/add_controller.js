@@ -192,22 +192,24 @@
           d3.select("svg")
           .remove();
 
-          var uptDataArr =  DataFactory.searchAgency(agency).then(function(results){
-                return {
-                  uptData: results[3],
-                  month: results[1]
-                }
+          DataFactory.searchAgency(agency).then(function(results){
+              var uptData = results[3];
+
+              var month = results[1];
+
+              DataFactory.vehicleHours(agency).then(function(results){
+                var vrhData = results[3];
+
+                DataFactory.tripsPerhour(uptData, month, vrhData);
+
               });
+          });
 
-              var vrhData = DataFactory.vehicleHours(agency).then(function(results){
-                      return results[3];
-                    });
 
-              DataFactory.tripsPerhour(uptDataArr, vrhData);
+
+
 
               $scope.agency = null;
-
-
 
           };
 

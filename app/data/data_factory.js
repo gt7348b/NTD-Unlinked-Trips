@@ -97,13 +97,10 @@
 
        };
 
-       var tripsPerhour = function(uptDataArr, vrhData){
-         console.log(uptDataArr);
-         console.log(vrhData);
-
-         var uptData = uptDataArr.value;
-
+       var tripsPerhour = function(uptData, month, vrhData){
          console.log(uptData);
+         console.log(vrhData);
+         console.log(month);
 
         //  var uptnumeric = uptDataArr.map(function(t){
         //    return {

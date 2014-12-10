@@ -97,34 +97,36 @@
 
        };
 
-       var tripsPerhour = function(uptData, vrmData, month){
+       var tripsPerhour = function(uptDataArr, vrhData){
+         console.log(uptDataArr);
+         console.log(vrhData);
+
+         var uptData = uptDataArr.value;
+
          console.log(uptData);
-         console.log(vrmData);
-         console.log(month);
 
+        //  var uptnumeric = uptDataArr.map(function(t){
+        //    return {
+        //     agency: t.Agencies,
+        //     mode: t.Modes,
+        //     monthtrips: month.map(function(d){
+        //       return{month: d, trips: +t[d].replace(/,/g, "")}
+        //     })
+        //    }
+        //  });
 
-         var uptnumeric = uptData.map(function(t){
-           return {
-            agency: t.Agencies,
-            mode: t.Modes,
-            monthtrips: month.map(function(d){
-              return{month: d, trips: +t[d].replace(/,/g, "")}
-            })
-           }
-         });
-
-         var vrmnumeric = vrmData.map(function(t){
-           return {
-             agency: t.Agencies,
-             mode: t.Modes,
-             monthtrips: month.map(function(d){
-               console.log(t[d]);
-               return{month: d, miles: +t[d].replace(/,/g, "")}
-             })
-           }
-         });
-         console.log(uptnumeric);
-         console.log(vrmnumberic);
+        //  var vrmnumeric = vrmData.map(function(t){
+        //    return {
+        //      agency: t.Agencies,
+        //      mode: t.Modes,
+        //      monthtrips: month.map(function(d){
+        //        console.log(t[d]);
+        //        return{month: d, miles: +t[d].replace(/,/g, "")}
+        //      })
+        //    }
+        //  });
+        //  console.log(uptnumeric);
+         //console.log(vrmnumberic);
 
         //  var tripspervrh = uptData.map(function(t){
         //    return {

@@ -12,7 +12,7 @@ body {
 
 .container{
   @include outer-container;
-  @include margin(1em 0em 1em 0em);
+  margin: none;
   $medium: new-breakpoint(max-width 750px 12);
   $mobile: new-breakpoint(max-width 600px 6);
 

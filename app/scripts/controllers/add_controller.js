@@ -32,7 +32,7 @@
             color.domain(modes);
 
             var margin = {top: 20, right: 50, bottom: 50, left: 60},
-            width = 1500 - margin.left - margin.right,
+            width = 1000 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
             var x = d3.scale.ordinal()
@@ -183,18 +183,24 @@
         };
 
         $scope.tripsPerhour = function(agency){
-          DataFactory.searchAgency(agency).then(function(results){
-            var uptData = results[3];
-            var month = results[1];
 
-            DataFactory.vehicleHours(agency).then(function(results){
-              var vrhData = results[3];
 
-              DataFactory.tripsPerhour(uptData, vrhData, month);
-
+        var uptDataArr =  DataFactory.searchAgency(agency).then(function(results){
+              return {
+                uptData: results[3],
+                month: results[1]
+              }
             });
 
-          });
+            var vrhData = DataFactory.vehicleHours(agency).then(function(results){
+                    return results[3];
+                  });
+
+            DataFactory.tripsPerhour(uptDataArr, vrhData);
+
+
+
+
 
         };
 

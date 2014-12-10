@@ -4,14 +4,16 @@
     .controller('AddController', ['$scope', '$location','$rootScope','DataFactory',
       function($scope, $location, $rootScope, DataFactory){
 
-        var agency_response = [],
-        msa_response = [],
-        mode_response = [];
 
         console.log("hey - i'm in the add controller")
 
         $scope.searchAgency = function(agency){
+
+          $scope.agency = null;
+
           DataFactory.searchAgency(agency).then(function(results){
+
+
             $scope.agencies = results[0];
 
             var uptData = results[0];
@@ -32,7 +34,7 @@
             color.domain(modes);
 
             var margin = {top: 20, right: 50, bottom: 50, left: 60},
-            width = 1000 - margin.left - margin.right,
+            width = 1200 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
             var x = d3.scale.ordinal()
@@ -184,7 +186,6 @@
 
         $scope.tripsPerhour = function(agency){
 
-
         var uptDataArr =  DataFactory.searchAgency(agency).then(function(results){
               return {
                 uptData: results[3],
@@ -198,13 +199,16 @@
 
             DataFactory.tripsPerhour(uptDataArr, vrhData);
 
-
+            $scope.agency = null;
 
 
 
         };
 
         $scope.vehicleHours = function(agency){
+
+          $scope.agency = null;
+
           DataFactory.vehicleHours(agency).then(function(results){
             $scope.agencies = results[0];
 
@@ -344,6 +348,9 @@
         };
 
         $scope.vehicleMiles = function(agency){
+
+          $scope.agency = null;
+
           DataFactory.vehicleMiles(agency).then(function(results){
             $scope.agencies = results[0];
 

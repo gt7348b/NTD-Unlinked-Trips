@@ -32,7 +32,7 @@
             var modes = ['CR', 'DR', 'HR', 'LR', 'MB', 'FB', 'TB'];
 
             var color = d3.scale.ordinal()
-            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c", 'green', 'steelblue']);
+            .range(["#001c9c","hsla(113, 86%, 50%, 1)","hsla(360, 100%, 50%, 1)","hsla(275, 100%, 44%, 1)","hsla(247, 100%, 50%, 1)", 'green', 'steelblue']);
 
             color.domain(modes);
 
@@ -102,8 +102,8 @@
             svg.append('g')
                 .attr('class', 'y axis')
                 .call(yAxis)
-                .selectAll('text')
-                .style('font-size', '.575em')
+                // .selectAll('text')
+                // .style('font-size', '.575em')
               .append('text')
                 .attr('transform', 'rotate(-90)')
                 .attr('y', 6)
@@ -229,12 +229,12 @@
             console.log(modes);
 
             var color = d3.scale.ordinal()
-            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c", 'green', 'steelblue']);
+            .range(["#001c9c","hsla(113, 86%, 50%, 1)","hsla(360, 100%, 50%, 1)","hsla(275, 100%, 44%, 1)","hsla(247, 100%, 50%, 1)", 'green', 'steelblue']);
 
             color.domain(modes);
 
             var margin = {top: 20, right: 50, bottom: 30, left: 60},
-            width = 1500 - margin.left - margin.right,
+            width = 1200 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
             var x = d3.scale.ordinal()
@@ -257,7 +257,7 @@
             .y(function (d) { return y(d.upt); });
 
             var color = d3.scale.ordinal()
-            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
+            .range(["#001c9c","hsla(113, 86%, 50%, 1)","hsla(360, 100%, 50%, 1)","hsla(275, 100%, 44%, 1)","hsla(247, 100%, 50%, 1)", 'green', 'steelblue']);
 
             // This creates the svg object
 
@@ -297,8 +297,8 @@
               svg.append('g')
               .attr('class', 'y axis')
               .call(yAxis)
-              .selectAll('text')
-                  .style('font-size', '.575em')
+              // .selectAll('text')
+              //     .style('font-size', '.575em')
               .append('text')
                   .attr('transform', 'rotate(-90)')
                   .attr('y', 6)
@@ -375,12 +375,12 @@
             var modes = ['CR', 'DR', 'HR', 'LR', 'MB', 'FB', 'TB'];
 
             var color = d3.scale.ordinal()
-            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c", 'green', 'steelblue']);
+            .range(["#001c9c","hsla(113, 86%, 50%, 1)","hsla(360, 100%, 50%, 1)","hsla(275, 100%, 44%, 1)","hsla(247, 100%, 50%, 1)", 'green', 'steelblue']);
 
             color.domain(modes);
 
             var margin = {top: 20, right: 50, bottom: 30, left: 60},
-            width = 1500 - margin.left - margin.right,
+            width = 1200 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
 
             var x = d3.scale.ordinal()
@@ -403,7 +403,7 @@
             .y(function (d) { return y(d.vehmiles); });
 
             var color = d3.scale.ordinal()
-            .range(["#001c9c","#101b4d","#475003","#9c8305","#d3c47c"]);
+            .range(["#001c9c","hsla(113, 86%, 50%, 1)","hsla(360, 100%, 50%, 1)","hsla(275, 100%, 44%, 1)","hsla(247, 100%, 50%, 1)", 'green', 'steelblue']);
 
             // This creates the svg object
 
@@ -443,8 +443,8 @@
               svg.append('g')
               .attr('class', 'y axis')
               .call(yAxis)
-              .selectAll('text')
-              .style('font-size', '.575em')
+              // .selectAll('text')
+              // .style('font-size', '.575em')
               .append('text')
               .attr('transform', 'rotate(-90)')
               .attr('y', 6)

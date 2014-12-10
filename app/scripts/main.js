@@ -35,8 +35,8 @@ console.log('Roscoes a cutie');
         controller: 'AddController'
       });
 
-      $routeProvider.when('/results', {
-        templateUrl: 'templates/search_results.html',
+      $routeProvider.when('/vehmiles', {
+        templateUrl: 'templates/vehmiles.html',
         controller: 'AddController'
       });
 

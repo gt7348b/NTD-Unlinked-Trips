@@ -12,13 +12,27 @@ body {
 
 .container{
   @include outer-container;
-  @include margin(1em 0em 1em 0em);
+  max-width: none;
   $medium: new-breakpoint(max-width 750px 12);
   $mobile: new-breakpoint(max-width 600px 6);
 
   .header{
 
-    background-image: url(images/Ottiginies - Departure Board.JPG);
+    color: black;
+    text-align: center;
+    background-color: orange;
+    opacity: 0.7;
+    @include padding (1em 0 1em 0);
+
+    li{
+      display: inline-block;
+    }
+
+
+    a {
+      text-decoration: none;
+      @include padding(0 1em 0 1em);
+    }
 
   }
   .footer {
@@ -54,6 +68,16 @@ body {
         letter-spacing: -1px;
       }
 
+      button {
+        color: black;
+        font-weight: bold;
+        border-radius: .3em;
+      }
+
+      input {
+        width: 40em;
+      }
+
       .chart div {
         font: 10px sans-serif;
         background-color: green;
@@ -77,6 +101,16 @@ body {
         fill: none;
         stroke: #000;
         shape-rendering: crispEdges;
+      }
+
+      .grid .tick{
+        stroke: gray;
+        opacity: 0.7;
+        shape-rendering: crispEdges;
+      }
+
+      .grid path{
+        stroke-width: 0;
       }
 
     }

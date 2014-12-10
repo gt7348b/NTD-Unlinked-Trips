@@ -65,10 +65,15 @@
                 .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
                 .y(function (d) { return y(d.upt); });
 
-            console.log(stack);
+            var area = d3.svg.area()
+                .interpolate('cardinal')
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y0(function (d) { return y(d.y0); })
+                .y1(function (d) { return y(d.y0 + d.y); });
+
+
             stack(tripsArr);
 
-            console.log(tripsArr);
             // This creates the svg object
 
             var svg = d3.select('.chart').append('svg')
@@ -151,6 +156,20 @@
               .style('stroke', function(d) { return color(d.mode);})
               .style('stroke-width', '.2em')
               .style('fill', 'none');
+
+
+              // console.log(tripsArr);
+              // // This section renders a stacked area
+              // var trips = svg.selectAll('.chart')
+              //     .data(tripsArr)
+              //     .enter().append('g')
+              //       .attr('class', 'chart')
+              //
+              // trips.append('path')
+              //     .attr('class', 'stackPath')
+              //     .attr('d', function (d) { return area(d.trips); })
+              //     .style('fill', function (d) {return color(d.month); })
+              //     .style('stroke', 'grey');
 
               // This renders stacked bar NOT WORKING
               // var selection = svg.selectAll('.chart')

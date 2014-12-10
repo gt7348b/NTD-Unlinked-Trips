@@ -59,7 +59,7 @@ console.log('Roscoes a cutie');
       function($scope, $location, $rootScope, DataFactory){
 
 
-        console.log("hey - i'm in the add controller")
+//        console.log("hey - i'm in the add controller")
 
         $scope.searchAgency = function(agency){
 
@@ -109,9 +109,24 @@ console.log('Roscoes a cutie');
             .orient('left');
 
             var line = d3.svg.line()
-            .interpolate("cardinal")
-            .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
-            .y(function (d) { return y(d.upt); });
+                .interpolate("cardinal")
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y(function (d) { return y(d.upt); });
+
+            var stack = d3.layout.stack()
+                .offset('zero')
+                .values(function(d){return d.trips; })
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y(function (d) { return y(d.upt); });
+
+            var area = d3.svg.area()
+                .interpolate('cardinal')
+                .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
+                .y0(function (d) { return y(d.y0); })
+                .y1(function (d) { return y(d.y0 + d.y); });
+
+
+            stack(tripsArr);
 
             // This creates the svg object
 
@@ -120,6 +135,8 @@ console.log('Roscoes a cutie');
             .attr('height', height + margin.top + margin.bottom)
             .append('g')
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
 
             // This defines the axes
 
@@ -194,6 +211,20 @@ console.log('Roscoes a cutie');
               .style('stroke-width', '.2em')
               .style('fill', 'none');
 
+
+              // console.log(tripsArr);
+              // // This section renders a stacked area
+              // var trips = svg.selectAll('.chart')
+              //     .data(tripsArr)
+              //     .enter().append('g')
+              //       .attr('class', 'chart')
+              //
+              // trips.append('path')
+              //     .attr('class', 'stackPath')
+              //     .attr('d', function (d) { return area(d.trips); })
+              //     .style('fill', function (d) {return color(d.month); })
+              //     .style('stroke', 'grey');
+
               // This renders stacked bar NOT WORKING
               // var selection = svg.selectAll('.chart')
               //       .data(tripsArr)
@@ -246,22 +277,24 @@ console.log('Roscoes a cutie');
           d3.select("svg")
           .remove();
 
-          var uptDataArr =  DataFactory.searchAgency(agency).then(function(results){
-                return {
-                  uptData: results[3],
-                  month: results[1]
-                }
+          DataFactory.searchAgency(agency).then(function(results){
+              var uptData = results[3];
+
+              var month = results[1];
+
+              DataFactory.vehicleHours(agency).then(function(results){
+                var vrhData = results[3];
+
+                DataFactory.tripsPerhour(uptData, month, vrhData);
+
               });
+          });
 
-              var vrhData = DataFactory.vehicleHours(agency).then(function(results){
-                      return results[3];
-                    });
 
-              DataFactory.tripsPerhour(uptDataArr, vrhData);
+
+
 
               $scope.agency = null;
-
-
 
           };
 
@@ -610,25 +643,24 @@ console.log('Roscoes a cutie');
 
 
             var tripsArr = [];
+            var tripmonth= {};
 
-            //
+            //This section cleans Data for stacked area
 
-            // month.forEach(function(number){
-            //   tripmonth[number] = {month: number, trips: []};
-            //   tripsArr.push(tripmonth[number]);
-            // })
+            month.forEach(function(number){
+              tripmonth[number] = {month: number, trips: []};
+              tripsArr.push(tripmonth[number]);
+            })
 
-            // response.forEach(function(d){
-            //
-            //   month.map(function(trips){
-            //
-            //     tripmonth[trips].trips.push({month: trips, upt: +d[trips].replace(/,/g, '')});
-            //
-            //   });
-            //
-            // });
+            response.forEach(function(d){
 
-            //stack(tripsArr);
+              month.map(function(trips){
+
+                tripmonth[trips].trips.push({mode: d.Modes, month: trips, upt: +d[trips].replace(/,/g, '')});
+
+              });
+
+            });
 
               // This creates an array used to call render the data
              var uptData = response.map(function (t){
@@ -664,47 +696,57 @@ console.log('Roscoes a cutie');
 
        };
 
-       var tripsPerhour = function(uptDataArr, vrhData){
-         console.log(uptDataArr);
-         console.log(vrhData);
+       var tripsPerhour = function(uptData, month, vrhData){
+        //  console.log(uptData);
+        //  console.log(vrhData);
+        //  console.log(month);
 
-         var uptData = uptDataArr.value;
-
-         console.log(uptData);
-
-        //  var uptnumeric = uptDataArr.map(function(t){
+        //  var uptnumeric = uptData.map(function(t){
         //    return {
-        //     agency: t.Agencies,
+        //     agency: t.Agency,
         //     mode: t.Modes,
         //     monthtrips: month.map(function(d){
         //       return{month: d, trips: +t[d].replace(/,/g, "")}
         //     })
         //    }
         //  });
-
-        //  var vrmnumeric = vrmData.map(function(t){
-        //    return {
-        //      agency: t.Agencies,
+         //
+        //  var vrhnumeric = vrhData.map(function(t){
+        //   return {
+        //      agency: t.Agency,
         //      mode: t.Modes,
-        //      monthtrips: month.map(function(d){
-        //        console.log(t[d]);
-        //        return{month: d, miles: +t[d].replace(/,/g, "")}
+        //      monthhours: month.map(function(d){
+         //
+        //        if (t[d] !== undefined){
+        //          return {month: d, hours: +t[d].replace(/,/g, "")}
+        //       }
         //      })
         //    }
         //  });
         //  console.log(uptnumeric);
-         //console.log(vrmnumberic);
+        //  console.log(vrhnumeric);
 
-        //  var tripspervrh = uptData.map(function(t){
-        //    return {
-        //     agency: t.Agency,
-        //     region: t.UZA,
-        //     mode: t.Modes,
-        //     tripsperhour: month.map(function(d){
-        //       return {month: d, triphour: +t[d].replace(/,/g, '')}
-        //     })
-        //    }
-        //  });
+
+         var calctripspervrh = function(tripsArr, hoursArr){
+           console.log(tripsArr);
+           console.log(hoursArr);
+
+           return {
+            agency: tripsArr.Agency,
+            region: tripsArr.UZA,
+            mode: tripsArr.Modes,
+            tripsperhour: month.map(function(d){
+              if (hoursArr[d]!== undefined){
+                return {month: d, triphour: +tripsArr[d].replace(/,/g, '') - +hoursArr[d].replace(/,/g, '')}
+              }
+            })
+           }
+         };
+
+         var tripspervrh = calctripspervrh(uptData, vrhData);
+
+         console.log(tripspervrh)
+
          return uptData;
        };
 

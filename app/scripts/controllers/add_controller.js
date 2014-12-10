@@ -11,6 +11,9 @@
 
           $scope.agency = null;
 
+          d3.select("svg")
+          .remove();
+
           DataFactory.searchAgency(agency).then(function(results){
 
 
@@ -186,28 +189,34 @@
 
         $scope.tripsPerhour = function(agency){
 
-        var uptDataArr =  DataFactory.searchAgency(agency).then(function(results){
-              return {
-                uptData: results[3],
-                month: results[1]
-              }
-            });
+          d3.select("svg")
+          .remove();
 
-            var vrhData = DataFactory.vehicleHours(agency).then(function(results){
-                    return results[3];
-                  });
+          var uptDataArr =  DataFactory.searchAgency(agency).then(function(results){
+                return {
+                  uptData: results[3],
+                  month: results[1]
+                }
+              });
 
-            DataFactory.tripsPerhour(uptDataArr, vrhData);
+              var vrhData = DataFactory.vehicleHours(agency).then(function(results){
+                      return results[3];
+                    });
 
-            $scope.agency = null;
+              DataFactory.tripsPerhour(uptDataArr, vrhData);
+
+              $scope.agency = null;
 
 
 
-        };
+          };
 
-        $scope.vehicleHours = function(agency){
+          $scope.vehicleHours = function(agency){
 
           $scope.agency = null;
+
+          d3.select('svg')
+              .remove();
 
           DataFactory.vehicleHours(agency).then(function(results){
             $scope.agencies = results[0];
@@ -350,6 +359,9 @@
         $scope.vehicleMiles = function(agency){
 
           $scope.agency = null;
+
+          d3.select('svg')
+            .remove();
 
           DataFactory.vehicleMiles(agency).then(function(results){
             $scope.agencies = results[0];

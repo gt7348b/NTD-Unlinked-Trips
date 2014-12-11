@@ -267,8 +267,8 @@
 
                   var line = d3.svg.line()
                   .interpolate("cardinal")
-                  .x(function (d) { return x(d.month) + x.rangeBand() / 2; })
-                  .y(function (d) { return y(d.tph); });
+                  .x(function (d) { if (d !== undefined){return x(d.month) + x.rangeBand() / 2; }})
+                  .y(function (d) { if (d !== undefined){return y(d.tph); }});
 
                   // This creates the svg object
 
@@ -284,12 +284,15 @@
 
                   // This is for line chart
                   y.domain([
-                    d3.min(uptData, function(c){
-                      return d3.min(c.monthlytph, function(min){ return min.tph;});
-                    }),
-                    d3.max(uptData, function(c){
-                      return d3.max(c.monthlytph, function(max){ return max.tph;});
-                    })
+                    d3.min(tphData, function(c){
+                        return d3.min(c.monthlytph, function(min){
+                          if (min !== undefined){
+                          return min.tph;}});
+                      }),
+                    d3.max(tphData, function(c){
+                            return d3.max(c.monthlytph, function(max){
+                              if (max !== undefined){return max.tph;}});
+                        })
                     ]);
 
                   // This renders the axes
@@ -333,7 +336,7 @@
 
                   // This section renders a line chart
                   var trips = svg.selectAll('.chart')
-                  .data(uptData)
+                  .data(tphData)
                   .enter().append('g')
                   .attr('class', 'chart');
 

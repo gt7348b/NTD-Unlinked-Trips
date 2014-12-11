@@ -97,7 +97,7 @@
        };
 
        var tripsPerhour = function(uptData, month, vrhData){
-        //  console.log(uptData);
+          console.log(uptData);
         //  console.log(vrhData);
         //  console.log(month);
 
@@ -111,41 +111,52 @@
         //    }
         //  });
          //
-        //  var vrhnumeric = vrhData.map(function(t){
-        //   return {
-        //      agency: t.Agency,
-        //      mode: t.Modes,
-        //      monthhours: month.map(function(d){
+         var vrhnumeric = vrhData.map(function(t){
+           //console.log(t);
+           var trips = [];
+
+           uptData.forEach(function(upt){
+            //  console.log(upt.Modes);
+            //  console.log(t.Modes);
+            //  console.log(upt);
+             if (upt.Modes === t.Modes){
+               trips.push(upt);
+             }
+           });
+
+          return {
+             agency: t.Agency,
+             mode: t.Modes,
+             monthhours: month.map(function(d){
+
+               if (t[d] !== undefined && t[d] !== '0'){
+                 var upt = trips[0][d].replace(/,/g, '');
+                 var hours = +t[d].replace(/,/g, '');
+
+                 console.log(upt/hours);
+                 return {month: d, hours: +t[d].replace(/,/g, "")}
+              }
+             })
+           }
+         });
+        // console.log(uptnumeric);
+        // console.log(vrhnumeric);
+
+
+
+        //  var tripspervrh = month.map(function(m){
+        //    console.log(m)
+        //    console.log(uptData);
          //
-        //        if (t[d] !== undefined){
-        //          return {month: d, hours: +t[d].replace(/,/g, "")}
-        //       }
-        //      })
+        //    var result
+         //
+        //    return {
+        //      month: m,
+        //      tpv: result
         //    }
         //  });
-        //  console.log(uptnumeric);
-        //  console.log(vrhnumeric);
 
-
-         var calctripspervrh = function(tripsArr, hoursArr){
-           console.log(tripsArr);
-           console.log(hoursArr);
-
-           return {
-            agency: tripsArr.Agency,
-            region: tripsArr.UZA,
-            mode: tripsArr.Modes,
-            tripsperhour: month.map(function(d){
-              if (hoursArr[d]!== undefined){
-                return {month: d, triphour: +tripsArr[d].replace(/,/g, '') - +hoursArr[d].replace(/,/g, '')}
-              }
-            })
-           }
-         };
-
-         var tripspervrh = calctripspervrh(uptData, vrhData);
-
-         console.log(tripspervrh)
+        // console.log(tripspervrh)
 
          return uptData;
        };

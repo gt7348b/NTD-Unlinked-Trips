@@ -18,8 +18,6 @@
                }
              });
 
-             //console.log(response);
-
              // This creates an array of months
 
              var month = d3.keys(data[0])
@@ -32,13 +30,12 @@
              .filter(function(key){ return key!=='UZA Name'})
              .filter(function(key){ return key!=='TOS'});
 
-             //  console.log(month);
 
+             //This section will create an object of modes for rendering color
             var modes = response.map(function(m){
               return {
                 mode: m.Modes
               }
-
             });
 
 
@@ -53,13 +50,9 @@
             })
 
             response.forEach(function(d){
-
               month.map(function(trips){
-
                 tripmonth[trips].trips.push({mode: d.Modes, month: trips, upt: +d[trips].replace(/,/g, '')});
-
               });
-
             });
 
               // This creates an array used to call render the data
@@ -74,8 +67,7 @@
                };
              });
 
-             //console.log(uptData);
-
+             // This pushes the data that will be returned to the controller for rendering
              var cleandata = [];
 
              cleandata.push(uptData);
@@ -97,57 +89,39 @@
        };
 
        var tripsPerhour = function(uptData, month, vrhData){
-        //  console.log(uptData);
-        //  console.log(vrhData);
-        //  console.log(month);
 
-        //  var uptnumeric = uptData.map(function(t){
-        //    return {
-        //     agency: t.Agency,
-        //     mode: t.Modes,
-        //     monthtrips: month.map(function(d){
-        //       return{month: d, trips: +t[d].replace(/,/g, "")}
-        //     })
-        //    }
-        //  });
-         //
-        //  var vrhnumeric = vrhData.map(function(t){
-        //   return {
-        //      agency: t.Agency,
-        //      mode: t.Modes,
-        //      monthhours: month.map(function(d){
-         //
-        //        if (t[d] !== undefined){
-        //          return {month: d, hours: +t[d].replace(/,/g, "")}
-        //       }
-        //      })
-        //    }
-        //  });
-        //  console.log(uptnumeric);
-        //  console.log(vrhnumeric);
+         var response = [];
+         var deferred = $q.defer();
 
+         //This section creates the array and caluculates Unlinked Trips per Vehicle Revenue Hour
+         var tripsphour = vrhData.map(function(t){
+             var trips = [];
+             uptData.forEach(function(upt){
+               if (upt.Modes === t.Modes){
+                 trips.push(upt);
+               }
+             });
 
-         var calctripspervrh = function(tripsArr, hoursArr){
-           console.log(tripsArr);
-           console.log(hoursArr);
+            return {
+               agency: t.Agency,
+               mode: t.Modes,
+               monthlytph: month.map(function(d){
 
-           return {
-            agency: tripsArr.Agency,
-            region: tripsArr.UZA,
-            mode: tripsArr.Modes,
-            tripsperhour: month.map(function(d){
-              if (hoursArr[d]!== undefined){
-                return {month: d, triphour: +tripsArr[d].replace(/,/g, '') - +hoursArr[d].replace(/,/g, '')}
-              }
-            })
-           }
-         };
+                 if (t[d] !== undefined && t[d] !== '0'){
+                   var upt = trips[0][d].replace(/,/g, '');
+                   var hours = +t[d].replace(/,/g, '');
 
-         var tripspervrh = calctripspervrh(uptData, vrhData);
+                   var tripsperhour = upt/hours;
+                   return {month: d, tph: tripsperhour}
+                }
+               })
+             }
+           });
+        console.log(tripsphour);
 
-         console.log(tripspervrh)
+        deferred.resolve(tripsphour);
 
-         return uptData;
+        return deferred.promise;
        };
 
 

@@ -231,7 +231,11 @@
               DataFactory.vehicleHours(agency).then(function(results){
                 var vrhData = results[3];
 
-                DataFactory.tripsPerhour(uptData, month, vrhData);
+                DataFactory.tripsPerhour(uptData, month, vrhData).then(function(results){
+
+                  console.log(results);
+
+                });
 
               });
           });

@@ -73,6 +73,10 @@
                 .y0(function (d) { return y(d.y0); })
                 .y1(function (d) { return y(d.y0 + d.y); });
 
+            var stackmode = function(c){
+              return c.mode
+            };
+
 
             stack(tripsArr);
 
@@ -91,9 +95,9 @@
             x.domain(month.map(function(d){ return d }));
 
             //This is for stacked bar
-            //y.domain([0, d3.max(tripsArr, function(d){return d.total})]);
+          //  y.domain([0, d3.max(tripsArr, function(d){return d.total})]);
 
-            // This is for line chart
+            // // This is for line chart
             y.domain([
               d3.min(uptData, function(c){
                 return d3.min(c.trips, function(min){ return min.upt;});
@@ -161,7 +165,7 @@
 
 
               // console.log(tripsArr);
-              // // This section renders a stacked area
+              // This section renders a stacked area
               // var trips = svg.selectAll('.chart')
               //     .data(tripsArr)
               //     .enter().append('g')
@@ -170,7 +174,7 @@
               // trips.append('path')
               //     .attr('class', 'stackPath')
               //     .attr('d', function (d) { return area(d.trips); })
-              //     .style('fill', function (d) {return color(d.month); })
+              //     .style('fill', function (d) {return color(stackmode(d.trips)); })
               //     .style('stroke', 'grey');
 
               // This renders stacked bar NOT WORKING

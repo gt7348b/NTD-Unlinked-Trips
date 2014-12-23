@@ -29,9 +29,9 @@ gulp.task('html', ['styles'], function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('ng-templates', function () {
-  return gulp.src('app/scripts/**/*.html')
-  .pipe(gulp.dest('dist/scripts'));
+gulp.task('other-files', function(){
+  return gulp.src('app/**/*.*')
+  .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', function () {

@@ -1,0 +1,80 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+// Custom Styles
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  font-size: 62.5%;
+}
+
+.container{
+  @include outer-container;
+  $medium: new-breakpoint(max-width 750px 12);
+  $mobile: new-breakpoint(max-width 600px 6);
+
+  .footer {
+    background-color: white;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        @include padding (0.5em 0.5em 0.5em 0.5em);
+      }
+
+      a {
+        text-decoration: none;
+        color: gray;
+      }
+    } // This closes out the ul
+  } //This closes out the footer
+
+    .hero-unit {
+      margin: 50px auto 0 auto;
+      width: 600px;
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 30px;
+      background-color: #eee;
+      border-radius: 6px;
+      padding: 60px;
+
+      h1 {
+        font-size: 60px;
+        line-height: 1;
+        letter-spacing: -1px;
+      }
+
+      .chart div {
+        font: 10px sans-serif;
+        background-color: green;
+        text-align: left;
+        padding: 3px;
+        margin: 1px;
+        color: white;
+      }
+
+      .chart svg {
+        font: 10px sans-serif;
+        fill: green;
+        text-align: left;
+        padding: 3px;
+        margin: 1px;
+        color: white;
+      }
+
+
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+
+    }
+
+}

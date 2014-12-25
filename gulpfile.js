@@ -39,6 +39,11 @@ gulp.task('other-files', function(){
   .pipe(gulp.dest('dist'));
 });
 
+gulp.task('bower', function(){
+  return gulp.src('/bower_components/**/*.*')
+  .pipe(gulp.dest('dist'));
+});
+
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin({

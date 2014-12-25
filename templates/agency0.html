@@ -1,18 +1,20 @@
-<form ng-submit='tripsPerhour(agency)'>
+<form ng-submit='searchAgency(agency)'>
   <input type='text' ng-model='agency.name' placeholder='Enter Full Agency Name'/>
   <button>Submit</button>
 </form>
 
+
+
 <!-- This section displays the list of agencies from the search -->
 <div class='results'>
-  Vehicle Revenue Hours
 
   <!-- This section displays the Chart from the search -->
 
   <div class='chart'>
+    <h4>{{ agency }}</h4>
   </div>
 
-  <ul>
+  <ul>Agency Search Results
     <li ng-repeat="agency in agencies">
       {{ agency.agency }} in {{ agency.region }} operates {{ agency.mode }}
     </li>

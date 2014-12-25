@@ -34,6 +34,11 @@ gulp.task('other-files', function(){
   .pipe(gulp.dest('dist'));
 });
 
+gulp.task('other-files', function(){
+  return gulp.src('app/**/*.*')
+  .pipe(gulp.dest('dist'));
+});
+
 gulp.task('images', function () {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin({

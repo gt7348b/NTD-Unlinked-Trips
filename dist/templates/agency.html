@@ -1,0 +1,22 @@
+<form ng-submit='searchAgency(agency)'>
+  <input type='text' ng-model='agency.name' placeholder='Enter Full Agency Name'/>
+  <button>Submit</button>
+</form>
+
+
+
+<!-- This section displays the list of agencies from the search -->
+<div class='results'>
+  Unlinked Passenger Trips
+  <!-- This section displays the Chart from the search -->
+
+  <div class='chart'>
+
+  </div>
+
+  <ul>
+    <li ng-repeat="agency in agencies">
+      {{ agency.agency }} in {{ agency.region }} operates {{ agency.mode }}
+    </li>
+  </ul>
+</div>

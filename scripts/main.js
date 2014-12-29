@@ -40,6 +40,11 @@ console.log('Roscoes a cutie');
         controller: 'AddController'
       });
 
+      $routeProvider.when('/region', {
+        templateUrl: 'templates/region.html',
+        controller: 'AddRegion'
+      });
+
 
 
 

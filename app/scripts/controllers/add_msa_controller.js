@@ -7,6 +7,8 @@
 
         console.log('Im in the region contoller');
 
+        
+
       }]);
 
 

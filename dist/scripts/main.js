@@ -4,7 +4,7 @@ console.log('Roscoes a cutie');
 
   angular.module('UPT', ['ngResource','ngRoute'])
     .constant({
-      'DATA_SOURCE': src='data/September 2014 Adjusted Database/UPT-Table 1.csv'
+      'DATA_SOURCE': src='data/October 2014 Adjusted Database/UPT-Table 1.csv'
     })
 
 
@@ -40,11 +40,6 @@ console.log('Roscoes a cutie');
         controller: 'AddController'
       });
 
-      $routeProvider.when('/region', {
-        templateUrl: 'templates/region.html',
-        controller: 'AddRegion'
-      });
-
 
 
 
@@ -75,7 +70,6 @@ console.log('Roscoes a cutie');
 
           DataFactory.searchAgency(agency).then(function(results){
 
-
             $scope.agencies = results[0];
 
             var uptData = results[0];
@@ -83,6 +77,20 @@ console.log('Roscoes a cutie');
             var month = results[1];
 
             var tripsArr = results[4];
+            console.log(tripsArr);
+
+            tripsArr.forEach(function(number){
+
+              var uptArr = number.trips
+
+              uptArr.forEach(function(n){
+                if (n.mode === 'DR'){console.log(n.upt);}
+
+              });
+
+            });
+
+            console.log(tripsArr[0].trips[0].upt);
 
             //console.log(tripsArr);
 
@@ -880,7 +888,7 @@ console.log('Roscoes a cutie');
         var response = [];
         var deferred = $q.defer();
 
-        var data = d3.csv('data/September 2014 Adjusted Database/VRH-Table 1.csv', function(error, data){
+        var data = d3.csv('data/October 2014 Adjusted Database/VRH-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
             if (entry.Agency == agency.name){
@@ -946,7 +954,7 @@ console.log('Roscoes a cutie');
         var response = [];
         var deferred = $q.defer();
 
-        var data = d3.csv('data/September 2014 Adjusted Database/VRM-Table 1.csv', function(error, data){
+        var data = d3.csv('data/October 2014 Adjusted Database/VRM-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
             if (entry.Agency == agency.name){
@@ -1016,6 +1024,30 @@ console.log('Roscoes a cutie');
 
 }());
 
+(function(){
+
+  angular.module('UPT')
+      .factory('RegionFactory', ['$q', '$location', 'DATA_SOURCE',
+        function($q, $location, DATA_SOURCE){
+
+          var searchRegion = function(region){
+            console.log(region);
+
+            var response = [];
+            var deffered = $;
+
+            var data = d3.csv(DATA_SOURCE, function(error, data){
+
+              console.log(data);
+
+            })
+
+          }
+
+        }]);
+
+}());
+
 (function(){}(
 //  angular.module('UPT')
   //  .controller('ModeController', [$scope, function($scope){
@@ -1024,10 +1056,22 @@ console.log('Roscoes a cutie');
 
 ));
 
-(function(){}(
+(function(){
+
+  angular.module('UPT')
+      .controller('AddRegion', ['$scope', '$location', '$rootScope', 'RegionFactory',
+
+      function($scope, $location, $rootScope, RegionFactory){
+
+        console.log('Im in the region contoller');
+
+        
+
+      }]);
 
 
-));
+
+}());
 
 (function(){
 

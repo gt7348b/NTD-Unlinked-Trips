@@ -4,6 +4,7 @@
     .controller('AddController', ['$scope', '$location','$rootScope','DataFactory',
       function($scope, $location, $rootScope, DataFactory){
 
+
 //        console.log("hey - i'm in the add controller")
 
         $scope.searchAgency = function(agency){
@@ -15,7 +16,6 @@
 
           DataFactory.searchAgency(agency).then(function(results){
 
-
             $scope.agencies = results[0];
 
             var uptData = results[0];
@@ -23,6 +23,20 @@
             var month = results[1];
 
             var tripsArr = results[4];
+            console.log(tripsArr);
+
+            tripsArr.forEach(function(number){
+
+              var uptArr = number.trips
+
+              uptArr.forEach(function(n){
+                if (n.mode === 'DR'){console.log(n.upt);}
+
+              });
+
+            });
+
+            console.log(tripsArr[0].trips[0].upt);
 
             //console.log(tripsArr);
 

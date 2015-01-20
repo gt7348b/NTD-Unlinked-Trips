@@ -113,6 +113,8 @@
 
                    var tripsperhour = upt/hours;
                    return {month: d, tph: tripsperhour}
+                } else {
+                  return {month: d, tph: 0}
                 }
                })
              }

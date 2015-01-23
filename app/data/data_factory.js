@@ -113,7 +113,7 @@
 
                    var tripsperhour = upt/hours;
                    return {month: d, tph: tripsperhour}
-                } if (t[d] === undefined){
+                } if (t[d] === NaN){
                   return {month: d, tph: 0}
                 } else {
                   return {month: d, tph: 0}

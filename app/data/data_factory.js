@@ -106,13 +106,17 @@
                agency: t.Agency,
                mode: t.Modes,
                monthlytph: month.map(function(d){
-
+                 //console.log(t[d])
                  if (t[d] !== undefined && t[d] !== '0'){
                    var upt = trips[0][d].replace(/,/g, '');
                    var hours = +t[d].replace(/,/g, '');
 
                    var tripsperhour = upt/hours;
                    return {month: d, tph: tripsperhour}
+                } if (t[d] === NaN){
+                  return {month: d, tph: 0}
+                } else {
+                  return {month: d, tph: 0}
                 }
                })
              }

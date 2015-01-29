@@ -109,7 +109,7 @@
                  //console.log(t[d])
 
                    var upt = trips[0][d].replace(/,/g, '');
-                   if (t[d] === '0') {
+                   if (t[d] === '') {
                      var hours = 1
                    } else if (t[d] === '') {
                      var hours = 1
@@ -117,7 +117,7 @@
                      var hours = +t[d].replace(/,/g, '')};
 
                    var tripsperhour = upt/hours;
-                   //console.log(tripsperhour)
+                   console.log(tripsperhour)
                    if (tripsperhour === NaN){
                      return {month: d, tph: 0}
                    } else if (tripsperhour == Infinity){

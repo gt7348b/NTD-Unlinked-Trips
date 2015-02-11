@@ -107,21 +107,28 @@
                mode: t.Modes,
                monthlytph: month.map(function(d){
                  //console.log(t[d])
-                 if (t[d] !== undefined && t[d] !== '0'){
+
                    var upt = trips[0][d].replace(/,/g, '');
-                   var hours = +t[d].replace(/,/g, '');
+                   if (t[d] === '') {
+                     var hours = 1
+                   } else if (t[d] === '') {
+                     var hours = 1
+                   } else {
+                     var hours = +t[d].replace(/,/g, '')};
 
                    var tripsperhour = upt/hours;
+                   console.log(tripsperhour)
+                   if (tripsperhour === NaN){
+                     return {month: d, tph: 0}
+                   } else if (tripsperhour == Infinity){
+                     return {month: d, tph: 0}
+                   } else {
                    return {month: d, tph: tripsperhour}
-                } if (t[d] === NaN){
-                  return {month: d, tph: 0}
-                } else {
-                  return {month: d, tph: 0}
-                }
-               })
+                 }
+              })
              }
            });
-        console.log(tripsphour);
+        //console.log(tripsphour);
 
         deferred.resolve(tripsphour);
 
@@ -136,7 +143,7 @@
         var response = [];
         var deferred = $q.defer();
 
-        var data = d3.csv('data/October 2014 Adjusted Database/VRH-Table 1.csv', function(error, data){
+        var data = d3.csv('data/December 2014 Adjusted Database/VRH-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
             if (entry.Agency == agency.name){
@@ -202,7 +209,7 @@
         var response = [];
         var deferred = $q.defer();
 
-        var data = d3.csv('data/October 2014 Adjusted Database/VRM-Table 1.csv', function(error, data){
+        var data = d3.csv('data/December 2014 Adjusted Database/VRM-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
             if (entry.Agency == agency.name){

@@ -30,7 +30,7 @@
               var uptArr = number.trips
 
               uptArr.forEach(function(n){
-                if (n.mode === 'DR'){console.log(n.upt);}
+                if (n.mode === 'CB'){console.log(n.upt);}
 
               });
 

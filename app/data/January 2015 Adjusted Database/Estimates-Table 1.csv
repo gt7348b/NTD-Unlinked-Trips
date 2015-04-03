@@ -1,0 +1,311 @@
+NTDID,Agency,Modes,TOS,Estimate,Month,Year
+0007,Lane Transit District,DR,PT,"13,186",January,2015
+0007,Lane Transit District,DT,PT,"14,470",January,2015
+0007,Lane Transit District,MB,DO,"545,036",January,2015
+0007,Lane Transit District,MB,PT,"1,202",January,2015
+0007,Lane Transit District,RB,DO,"173,000",January,2015
+0007,Lane Transit District,VP,PT,"3,720",January,2015
+0011,Valley Regional Transit,DR,DO,"4,381",December,2015
+0011,Valley Regional Transit,DR,DO,"3,620",January,2015
+0011,Valley Regional Transit,MB,DO,"116,103",November,2015
+0011,Valley Regional Transit,MB,DO,"117,348",December,2015
+0011,Valley Regional Transit,MB,DO,"107,391",January,2015
+0019,Intercity Transit,DR,DO,"11,198",January,2015
+0020,Kitsap Transit,DT,PT,17,November,2015
+0020,Kitsap Transit,DT,PT,18,December,2015
+0020,Kitsap Transit,DT,PT,16,January,2015
+0028,Pierce County Ferry Operations,FB,PT,"11,900",January,2015
+0049,"vRide, Inc. - Anchorage",VP,DO,"18,059",January,2015
+0057,Central Oregon Intergovernmental Council,CB,DO,"13,635",January,2015
+0057,Central Oregon Intergovernmental Council,DR,DO,"4,168",January,2015
+0057,Central Oregon Intergovernmental Council,DR,PT,"3,204",January,2015
+0057,Central Oregon Intergovernmental Council,MB,PT,"29,317",January,2015
+1040,Southeast Area Transit,DR,PT,415,September,2015
+1040,Southeast Area Transit,DR,PT,455,October,2015
+1040,Southeast Area Transit,DR,PT,386,November,2015
+1040,Southeast Area Transit,DR,PT,409,December,2015
+1040,Southeast Area Transit,DR,PT,338,January,2015
+1040,Southeast Area Transit,MB,DO,"116,469",September,2015
+1040,Southeast Area Transit,MB,DO,"124,781",October,2015
+1040,Southeast Area Transit,MB,DO,"105,730",November,2015
+1040,Southeast Area Transit,MB,DO,"106,864",December,2015
+1040,Southeast Area Transit,MB,DO,"97,796",January,2015
+1049,The Greater New Haven Transit District,DR,DO,"15,900",January,2015
+1049,The Greater New Haven Transit District,MB,DO,268,January,2015
+1057,Norwalk Transit District,DR,DO,"3,323",January,2015
+1057,Norwalk Transit District,DR,PT,"4,324",January,2015
+1057,Norwalk Transit District,MB,DO,"138,164",January,2015
+1057,Norwalk Transit District,MB,PT,"2,253",January,2015
+1061,Montachusett Regional Transit Authority,DR,PT,"31,091",January,2015
+1066,Chittenden County Transportation Authority,CB,DO,"16,853",January,2015
+1066,Chittenden County Transportation Authority,DR,PT,"3,792",January,2015
+1066,Chittenden County Transportation Authority,MB,DO,"182,369",January,2015
+1108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"52,594",October,2015
+1108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"43,604",November,2015
+1108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"45,595",December,2015
+1108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"44,043",January,2015
+1117,Plymouth & Brockton Street Railway Company,CB,DO,"37,994",January,2015
+1130,Connecticut Department of Transportation -CTTRANSIT New Britain,MB,PT,"60,565",January,2015
+2076,Westchester County Bee-Line System,DR,PT,"18,600",January,2015
+2076,Westchester County Bee-Line System,MB,PT,"2,332,351",January,2015
+2080,New Jersey Transit Corporation,CR,DO,"5,894,533",January,2015
+2096,Putnam County Transit,DR,PT,"1,261",January,2015
+2096,Putnam County Transit,MB,PT,"9,377",January,2015
+2098,Port Authority Trans-Hudson Corporation,HR,DO,"6,002,411",January,2015
+2135,Monsey New Square Trails Corporation,CB,DO,"60,553",January,2015
+2137,Monroe Bus Corporation,CB,DO,"33,892",January,2015
+2177,"Adirondack Transit Lines, Inc,",CB,DO,"45,377",January,2015
+3001,Kanawha Valley Regional Transportation Authority,DR,DO,"1,537",January,2015
+3001,Kanawha Valley Regional Transportation Authority,MB,DO,"211,553",January,2015
+3008,Greater Lynchburg Transit Company,DR,DO,"1,383",January,2015
+3008,Greater Lynchburg Transit Company,MB,DO,"153,791",January,2015
+3010,Lehigh and Northampton Transportation Authority,DR,PT,"29,440",January,2015
+3012,Cambria County Transit Authority,IP,DO,"1,213",January,2015
+3015,Luzerne County Transportation Authority,DR,DO,"10,130",January,2015
+3015,Luzerne County Transportation Authority,MB,DO,"114,017",October,2015
+3015,Luzerne County Transportation Authority,MB,DO,"96,610",November,2015
+3015,Luzerne County Transportation Authority,MB,DO,"97,646",December,2015
+3015,Luzerne County Transportation Authority,MB,DO,"89,360",January,2015
+3025,County of Lackawanna Transit System,DR,DO,"7,849",December,2015
+3025,County of Lackawanna Transit System,DR,DO,"6,486",January,2015
+3025,County of Lackawanna Transit System,DR,PT,24,December,2015
+3025,County of Lackawanna Transit System,DR,PT,20,January,2015
+3025,County of Lackawanna Transit System,MB,DO,"85,365",December,2015
+3025,County of Lackawanna Transit System,MB,DO,"78,122",January,2015
+3025,County of Lackawanna Transit System,MB,PT,"5,186",December,2015
+3025,County of Lackawanna Transit System,MB,PT,"4,746",January,2015
+3026,Williamsport Bureau of Transportation,DR,DO,2,November,2015
+3026,Williamsport Bureau of Transportation,DR,DO,2,December,2015
+3026,Williamsport Bureau of Transportation,DR,DO,2,January,2015
+3027,York County Transportation Authority,DR,DO,"18,386",January,2015
+3027,York County Transportation Authority,DR,PT,699,January,2015
+3030,Washington Metropolitan Area Transit Authority,MB,PT,"473,285",October,2015
+3030,Washington Metropolitan Area Transit Authority,MB,PT,"401,028",November,2015
+3030,Washington Metropolitan Area Transit Authority,MB,PT,"405,329",December,2015
+3030,Washington Metropolitan Area Transit Authority,MB,PT,"370,936",January,2015
+3044,Westmoreland County Transit Authority,DT,PT,"13,901",January,2015
+3044,Westmoreland County Transit Authority,MB,PT,"37,614",January,2015
+3051,Ride-On Montgomery County Transit,MB,DO,"1,942,169",January,2015
+3057,Pennsylvania Department of Transportation,CR,PT,"118,408",October,2015
+3057,Pennsylvania Department of Transportation,CR,PT,"105,068",November,2015
+3057,Pennsylvania Department of Transportation,CR,PT,"112,562",December,2015
+3057,Pennsylvania Department of Transportation,CR,PT,"85,187",January,2015
+3077,Borough of Pottstown - Pottstown Area Rapid Transit,DR,PT,369,January,2015
+3077,Borough of Pottstown - Pottstown Area Rapid Transit,MB,PT,"17,182",January,2015
+3096,The Tri--County Council for the Lower Eastern Shore of Maryland,DT,PT,168,January,2015
+3102,Martz Trailways,CB,DO,"76,423",December,2015
+3102,Martz Trailways,CB,DO,"75,523",January,2015
+3103,"Martz Group, National Coach Works of Virginia",CB,DO,"25,404",September,2015
+3103,"Martz Group, National Coach Works of Virginia",CB,DO,"27,525",October,2015
+3103,"Martz Group, National Coach Works of Virginia",CB,DO,"22,327",November,2015
+3103,"Martz Group, National Coach Works of Virginia",CB,DO,"22,825",December,2015
+3103,"Martz Group, National Coach Works of Virginia",CB,DO,"22,556",January,2015
+4023,Augusta Richmond County Transit Department,DR,PT,"1,297",January,2015
+4023,Augusta Richmond County Transit Department,MB,PT,"67,041",January,2015
+4027,Pinellas Suncoast Transit Authority,CB,DO,"7,587",December,2015
+4027,Pinellas Suncoast Transit Authority,CB,DO,"7,498",January,2015
+4029,Broward County Transit Division,DR,PT,"42,075",January,2015
+4034,Miami-Dade Transit,DR,PT,"108,884",January,2015
+4034,Miami-Dade Transit,HR,DO,"1,593,505",January,2015
+4034,Miami-Dade Transit,MB,DO,"5,761,237",January,2015
+4034,Miami-Dade Transit,MB,PT,"25,027",January,2015
+4034,Miami-Dade Transit,MG,DO,"355,323",January,2015
+4036,City of Tallahassee,DR,DO,"5,603",January,2015
+4036,City of Tallahassee,MB,DO,"230,623",January,2015
+4078,Cobb County Department of Transportation Authority,CB,PT,"51,563",October,2015
+4078,Cobb County Department of Transportation Authority,CB,PT,"41,825",November,2015
+4078,Cobb County Department of Transportation Authority,CB,PT,"42,759",December,2015
+4078,Cobb County Department of Transportation Authority,CB,PT,"42,255",January,2015
+4078,Cobb County Department of Transportation Authority,DR,PT,"5,570",October,2015
+4078,Cobb County Department of Transportation Authority,DR,PT,"4,730",November,2015
+4078,Cobb County Department of Transportation Authority,DR,PT,"5,011",December,2015
+4078,Cobb County Department of Transportation Authority,DR,PT,"4,141",January,2015
+4078,Cobb County Department of Transportation Authority,MB,PT,"272,215",October,2015
+4078,Cobb County Department of Transportation Authority,MB,PT,"230,655",November,2015
+4078,Cobb County Department of Transportation Authority,MB,PT,"233,129",December,2015
+4078,Cobb County Department of Transportation Authority,MB,PT,"213,347",January,2015
+4086,Metropolitan Bus Authority,DR,DO,"6,214",January,2015
+4086,Metropolitan Bus Authority,MB,DO,"456,660",January,2015
+4102,Waccamaw Regional Transportation Authority,DR,DO,317,November,2015
+4102,Waccamaw Regional Transportation Authority,DR,DO,336,December,2015
+4102,Waccamaw Regional Transportation Authority,DR,DO,278,January,2015
+4102,Waccamaw Regional Transportation Authority,MB,DO,"27,906",November,2015
+4102,Waccamaw Regional Transportation Authority,MB,DO,"28,205",December,2015
+4102,Waccamaw Regional Transportation Authority,MB,DO,"25,812",January,2015
+4105,Puerto Rico Highway and Transportation Authority PRHTA,PB,PT,"2,262,335",January,2015
+4120,"City of Ocala, Florida",DR,PT,"1,107",January,2015
+4120,"City of Ocala, Florida",MB,PT,"35,800",January,2015
+4141,Central Midlands Transit,DR,PT,"3,503",January,2015
+4141,Central Midlands Transit,MB,PT,"157,002",January,2015
+4152,"Miami Lakes - vRide, Inc.",VP,DO,"50,342",January,2015
+4153,"vRide, Inc. - Atlanta",VP,DO,"56,271",January,2015
+4175,Puerto Rico Maritime Transport Authority,FB,DO,"121,662",December,2015
+4175,Puerto Rico Maritime Transport Authority,FB,DO,"102,116",January,2015
+4177,Buckhead Community Improvement District,MB,PT,"11,009",September,2015
+4177,Buckhead Community Improvement District,MB,PT,"11,795",October,2015
+4177,Buckhead Community Improvement District,MB,PT,"9,994",November,2015
+4177,Buckhead Community Improvement District,MB,PT,"10,101",December,2015
+4177,Buckhead Community Improvement District,MB,PT,"9,244",January,2015
+4180,University of Georgia Transit System,DR,DO,555,January,2015
+4180,University of Georgia Transit System,MB,DO,"643,281",January,2015
+4200,Tampa Bay Area Regional Transportation Authority,VP,PT,"15,896",January,2015
+5010,METRO Regional Transit Authority,CB,DO,"8,087",January,2015
+5010,METRO Regional Transit Authority,DR,DO,"18,481",January,2015
+5010,METRO Regional Transit Authority,MB,DO,"370,434",January,2015
+5016,Central Ohio Transit Authority,DR,PT,"19,759",January,2015
+5016,Central Ohio Transit Authority,MB,DO,"1,397,547",January,2015
+5032,Mass Transportation Authority,DR,DO,"30,940",January,2015
+5032,Mass Transportation Authority,DR,PT,280,January,2015
+5032,Mass Transportation Authority,MB,DO,"408,167",January,2015
+5044,Fort Wayne Public Transportation Corporation,DR,DO,"3,628",January,2015
+5044,Fort Wayne Public Transportation Corporation,MB,DO,"158,824",January,2015
+5057,Rock Island County Metropolitan Mass Transit District,FB,PT,138,November,2015
+5057,Rock Island County Metropolitan Mass Transit District,FB,PT,147,December,2015
+5057,Rock Island County Metropolitan Mass Transit District,FB,PT,123,January,2015
+5113,Pace - Suburban Bus Division,DR,DO,"2,462",January,2015
+5113,Pace - Suburban Bus Division,DR,PT,"77,632",January,2015
+5113,Pace - Suburban Bus Division,DT,PT,"4,488",January,2015
+5113,Pace - Suburban Bus Division,MB,DO,"2,138,795",January,2015
+5113,Pace - Suburban Bus Division,MB,PT,"123,065",January,2015
+5113,Pace - Suburban Bus Division,VP,DO,"152,988",January,2015
+5119,City of Detroit Department of Transportation,DR,PT,786,January,2015
+5119,City of Detroit Department of Transportation,DT,PT,"20,716",January,2015
+5141,Detroit Transportation Corporation,MG,DO,"76,786",January,2015
+5154,Metropolitan Council,CB,PT,"19,079",January,2015
+5157,Butler County Regional Transit Authority,CB,DO,"4,431",January,2015
+5157,Butler County Regional Transit Authority,DR,DO,"3,119",January,2015
+5157,Butler County Regional Transit Authority,MB,DO,"20,558",January,2015
+5161,Ozaukee County Transit Services,CB,DO,"6,335",December,2015
+5161,Ozaukee County Transit Services,CB,DO,"6,260",January,2015
+5161,Ozaukee County Transit Services,DR,PT,"7,205",January,2015
+5167,"South Lake County Community Services, Inc.",DR,DO,"3,596",August,2015
+5167,"South Lake County Community Services, Inc.",DR,DO,"3,675",September,2015
+5167,"South Lake County Community Services, Inc.",DR,DO,"4,033",October,2015
+5167,"South Lake County Community Services, Inc.",DR,DO,"3,425",November,2015
+5167,"South Lake County Community Services, Inc.",DR,DO,"3,629",December,2015
+5167,"South Lake County Community Services, Inc.",DR,DO,"2,999",January,2015
+5169,Miami County Public Transit,DR,PT,"3,544",September,2015
+5169,Miami County Public Transit,DR,PT,"3,889",October,2015
+5169,Miami County Public Transit,DR,PT,"3,303",November,2015
+5169,Miami County Public Transit,DR,PT,"3,499",December,2015
+5169,Miami County Public Transit,DR,PT,"2,892",January,2015
+5182,"Pace-Suburban Bus Division, ADA Paratransit Services",DR,PT,"285,198",January,2015
+5182,"Pace-Suburban Bus Division, ADA Paratransit Services",DT,PT,"3,312",January,2015
+5190,City of Chicago Department of Transportation,FB,DO,"6,530",December,2015
+5190,City of Chicago Department of Transportation,FB,DO,"5,481",January,2015
+5191,Mid-Ohio Regional Planning Commision,VP,PT,"6,834",January,2015
+5193,"VRide, Inc. - Michigan",VP,DO,"96,412",January,2015
+5197,Trumbull County Transit Board,DR,PT,"3,073",January,2015
+5198,Medina County Public Transit,DR,DO,"2,879",January,2015
+5198,Medina County Public Transit,DT,PT,398,January,2015
+5198,Medina County Public Transit,MB,DO,"1,663",January,2015
+5199,Delaware County Transit Board,DR,DO,902,January,2015
+5199,Delaware County Transit Board,MB,DO,"4,878",January,2015
+6010,"City Transit Management Company, Inc.",DR,DO,"6,191",January,2015
+6010,"City Transit Management Company, Inc.",MB,DO,"158,863",January,2015
+6016,Beaumont Municipal Transit System,DR,PT,"1,809",December,2015
+6016,Beaumont Municipal Transit System,DR,PT,"1,495",January,2015
+6016,Beaumont Municipal Transit System,MB,PT,"43,606",December,2015
+6016,Beaumont Municipal Transit System,MB,PT,"39,906",January,2015
+6017,Central Oklahoma Transportation and Parking Authority,DT,PT,810,December,2015
+6017,Central Oklahoma Transportation and Parking Authority,DT,PT,707,January,2015
+6017,Central Oklahoma Transportation and Parking Authority,FB,PT,267,December,2015
+6017,Central Oklahoma Transportation and Parking Authority,FB,PT,224,January,2015
+6024,Shreveport Area Transit System,DR,DO,"3,916",January,2015
+6024,Shreveport Area Transit System,MB,DO,"234,118",January,2015
+6032,New Orleans Regional Transit Authority,DR,PT,"19,196",August,2015
+6032,New Orleans Regional Transit Authority,DR,PT,"19,618",September,2015
+6032,New Orleans Regional Transit Authority,DR,PT,"21,529",October,2015
+6032,New Orleans Regional Transit Authority,DR,PT,"18,282",November,2015
+6032,New Orleans Regional Transit Authority,DR,PT,"19,368",December,2015
+6032,New Orleans Regional Transit Authority,DR,PT,"16,005",January,2015
+6032,New Orleans Regional Transit Authority,MB,PT,"929,705",August,2015
+6032,New Orleans Regional Transit Authority,MB,PT,"1,004,199",September,2015
+6032,New Orleans Regional Transit Authority,MB,PT,"1,075,869",October,2015
+6032,New Orleans Regional Transit Authority,MB,PT,"911,614",November,2015
+6032,New Orleans Regional Transit Authority,MB,PT,"921,390",December,2015
+6032,New Orleans Regional Transit Authority,MB,PT,"843,208",January,2015
+6032,New Orleans Regional Transit Authority,SR,PT,"536,508",August,2015
+6032,New Orleans Regional Transit Authority,SR,PT,"591,417",September,2015
+6032,New Orleans Regional Transit Authority,SR,PT,"675,495",October,2015
+6032,New Orleans Regional Transit Authority,SR,PT,"557,684",November,2015
+6032,New Orleans Regional Transit Authority,SR,PT,"575,185",December,2015
+6032,New Orleans Regional Transit Authority,SR,PT,"476,577",January,2015
+6048,Capital Metropolitan Transportation Authority,CB,PT,"44,691",December,2015
+6048,Capital Metropolitan Transportation Authority,CB,PT,"44,164",January,2015
+6048,Capital Metropolitan Transportation Authority,DT,PT,"2,453",December,2015
+6048,Capital Metropolitan Transportation Authority,DT,PT,"2,140",January,2015
+6048,Capital Metropolitan Transportation Authority,RB,PT,"180,427",December,2015
+6048,Capital Metropolitan Transportation Authority,RB,PT,"158,329",January,2015
+6051,Corpus Christi Regional Transportation Authority,FB,PT,"1,123",October,2015
+6051,Corpus Christi Regional Transportation Authority,FB,PT,954,November,2015
+6051,Corpus Christi Regional Transportation Authority,FB,PT,"1,018",December,2015
+6051,Corpus Christi Regional Transportation Authority,FB,PT,854,January,2015
+6084,"Dallas - vRide, Inc.",VP,DO,"35,441",January,2015
+6107,"Texoma Area Paratransit System, Inc",CB,DO,"8,708",October,2015
+6107,"Texoma Area Paratransit System, Inc",CB,DO,"7,063",November,2015
+6107,"Texoma Area Paratransit System, Inc",CB,DO,"7,221",December,2015
+6107,"Texoma Area Paratransit System, Inc",CB,DO,"7,136",January,2015
+6107,"Texoma Area Paratransit System, Inc",CB,PT,"2,137",September,2015
+6107,"Texoma Area Paratransit System, Inc",CB,PT,"2,315",October,2015
+6107,"Texoma Area Paratransit System, Inc",CB,PT,"1,878",November,2015
+6107,"Texoma Area Paratransit System, Inc",CB,PT,"1,920",December,2015
+6107,"Texoma Area Paratransit System, Inc",CB,PT,"1,897",January,2015
+6107,"Texoma Area Paratransit System, Inc",DR,DO,"43,050",October,2015
+6107,"Texoma Area Paratransit System, Inc",DR,DO,"36,558",November,2015
+6107,"Texoma Area Paratransit System, Inc",DR,DO,"38,730",December,2015
+6107,"Texoma Area Paratransit System, Inc",DR,DO,"32,006",January,2015
+6107,"Texoma Area Paratransit System, Inc",MB,DO,"6,578",October,2015
+6107,"Texoma Area Paratransit System, Inc",MB,DO,"5,574",November,2015
+6107,"Texoma Area Paratransit System, Inc",MB,DO,"5,634",December,2015
+6107,"Texoma Area Paratransit System, Inc",MB,DO,"5,156",January,2015
+6111,Rio Metro Regional Transit District,CB,DO,142,January,2015
+6111,Rio Metro Regional Transit District,CB,PT,"4,475",January,2015
+6111,Rio Metro Regional Transit District,CR,PT,"59,848",January,2015
+6111,Rio Metro Regional Transit District,DR,DO,"4,239",January,2015
+6111,Rio Metro Regional Transit District,DT,PT,"1,528",January,2015
+6111,Rio Metro Regional Transit District,MB,DO,592,January,2015
+6124,"vRide, Inc. - El Paso",VP,DO,"17,656",January,2015
+8025,City of Loveland Transit,DR,DO,655,January,2015
+8025,City of Loveland Transit,MB,DO,"9,722",January,2015
+8106,North Front Range Metropolitan Planning Organization,VP,DO,"9,941",January,2015
+8107,The University of Montana - ASUM Transportation,MB,DO,"13,935",September,2015
+8107,The University of Montana - ASUM Transportation,MB,DO,"14,930",October,2015
+8107,The University of Montana - ASUM Transportation,MB,DO,"12,651",November,2015
+8107,The University of Montana - ASUM Transportation,MB,DO,"12,787",December,2015
+8107,The University of Montana - ASUM Transportation,MB,DO,"11,702",January,2015
+8109,"vRide, Inc. - Denver",VP,DO,"17,165",January,2015
+9006,Santa Cruz Metropolitan Transit District,DR,DO,"6,100",January,2015
+9006,Santa Cruz Metropolitan Transit District,DT,PT,396,January,2015
+9017,City of Santa Rosa,MB,PT,634,December,2015
+9017,City of Santa Rosa,MB,PT,580,January,2015
+9121,Antelope Valley Transit Authority,CB,PT,"25,395",January,2015
+9121,Antelope Valley Transit Authority,DT,PT,"2,543",November,2015
+9121,Antelope Valley Transit Authority,DT,PT,"2,628",December,2015
+9121,Antelope Valley Transit Authority,DT,PT,"2,293",January,2015
+9121,Antelope Valley Transit Authority,MB,PT,"211,867",January,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",DT,PT,"36,287",August,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",DT,PT,"36,347",September,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",DT,PT,"38,012",October,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",DT,PT,"33,201",November,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",DT,PT,"34,305",December,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",DT,PT,"29,926",January,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",MB,PT,"1,596,944",December,2015
+9136,"Regional Public Transportation Authority, dba: Valley Metro",MB,PT,"1,461,439",January,2015
+9169,"vRide, Inc. - Valley Metro",VP,DO,"85,312",January,2015
+9171,Santa Clarita Transit,CB,PT,"38,785",January,2015
+9171,Santa Clarita Transit,DR,PT,"7,101",January,2015
+9171,Santa Clarita Transit,MB,PT,"192,427",January,2015
+9211,Anaheim Transportation Network,MB,PT,"860,724",January,2015
+9224,"Paratransit, Inc. CTSA",DR,DO,"16,084",September,2015
+9224,"Paratransit, Inc. CTSA",DR,DO,"17,651",October,2015
+9224,"Paratransit, Inc. CTSA",DR,DO,"14,989",November,2015
+9224,"Paratransit, Inc. CTSA",DR,DO,"15,880",December,2015
+9224,"Paratransit, Inc. CTSA",DR,DO,"13,123",January,2015
+9228,"vRide, Inc. - Tucson",VP,DO,"6,572",January,2015
+9233,Yuma County Intergovernmental Public Transportation Authority,DR,PT,381,January,2015
+9233,Yuma County Intergovernmental Public Transportation Authority,MB,PT,"36,074",January,2015
+9241,County of Maui - Dept. of Transportation,CB,PT,"15,741",January,2015
+9241,County of Maui - Dept. of Transportation,DR,PT,"31,866",January,2015
+9241,County of Maui - Dept. of Transportation,MB,PT,"178,218",December,2015
+9241,County of Maui - Dept. of Transportation,MB,PT,"163,096",January,2015

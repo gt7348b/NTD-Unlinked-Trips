@@ -899,7 +899,7 @@ console.log('Roscoes a cutie');
         var response = [];
         var deferred = $q.defer();
 
-        var data = d3.csv('data/December 2014 Adjusted Database/VRH-Table 1.csv', function(error, data){
+        var data = d3.csv('data/January 2015 Adjusted Database/VRH-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
             if (entry.Agency == agency.name){
@@ -965,7 +965,7 @@ console.log('Roscoes a cutie');
         var response = [];
         var deferred = $q.defer();
 
-        var data = d3.csv('data/December 2014 Adjusted Database/VRM-Table 1.csv', function(error, data){
+        var data = d3.csv('data/January 2015 Adjusted Database/VRM-Table 1.csv', function(error, data){
 
           var sel_agency = data.filter(function(entry){ //filters the data by agency name
             if (entry.Agency == agency.name){

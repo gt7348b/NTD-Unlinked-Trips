@@ -7,6 +7,17 @@
 
 //        console.log("hey - i'm in the add controller")
 
+var data = d3.csv('data/January 2015 Adjusted Database/VRH-Table 1.csv', function(error, data){
+
+  console.log(data);
+  // var sel_agency = data.filter(function(entry){ //filters the data by agency name
+  //   if (entry.Agency == agency.name){
+  //     response.push(entry);  //adds the data to the response array
+  //   }
+  // });
+});
+
+    console.log(data);
         $scope.searchAgency = function(agency){
 
           $scope.agency = null;

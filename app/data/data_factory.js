@@ -28,7 +28,10 @@
              .filter(function(key){ return key!=='SSW'})
              .filter(function(key){ return key!=='UZA'})
              .filter(function(key){ return key!=='UZA Name'})
-             .filter(function(key){ return key!=='TOS'});
+             .filter(function(key){ return key!=='TOS'})
+             .filter(function(key){ return key!=='5 digit NTDID'})
+             .filter(function(key){ return key!=='4 digit NTDID'})
+             .filter(function(key){ return key!=='Reporter Type'});
 
 
              //This section will create an object of modes for rendering color
@@ -60,7 +63,7 @@
                return {
                  agency: t.Agency,
                  mode:   t.Modes,
-                 region: t.UZA,
+                 region: t.UZA_Name,
                  trips: month.map(function(d){
                    return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
                  })
@@ -160,8 +163,11 @@
           .filter(function(key){ return key!=='Active'})
           .filter(function(key){ return key!=='SSW'})
           .filter(function(key){ return key!=='UZA'})
-          .filter(function(key){ return key!=='UZA Name'})
-          .filter(function(key){ return key!=='TOS'});
+          .filter(function(key){ return key!=='UZA_Name'})
+          .filter(function(key){ return key!=='TOS'})
+          .filter(function(key){ return key!=='5 digit NTDID'})
+          .filter(function(key){ return key!=='4 digit NTDID'})
+          .filter(function(key){ return key!=='Reporter Type'});
 
           var modes = response.map(function(m){
             return {
@@ -175,7 +181,7 @@
             return {
               agency: t.Agency,
               mode:   t.Modes,
-              region: t.UZA,
+              region: t.UZA_Name,
               trips: month.map(function(d){
                 return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })
@@ -227,7 +233,10 @@
           .filter(function(key){ return key!=='SSW'})
           .filter(function(key){ return key!=='UZA'})
           .filter(function(key){ return key!=='UZA Name'})
-          .filter(function(key){ return key!=='TOS'});
+          .filter(function(key){ return key!=='TOS'})
+          .filter(function(key){ return key!=='5 digit NTDID'})
+          .filter(function(key){ return key!=='4 digit NTDID'})
+          .filter(function(key){ return key!=='Reporter Type'});
 
           var modes = response.map(function(m){
             return {
@@ -241,7 +250,7 @@
             return {
               agency: t.Agency,
               mode:   t.Modes,
-              region: t.UZA,
+              region: t.UZA_Name,
               miles: month.map(function(d){
                 return {month: d, vehmiles: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })

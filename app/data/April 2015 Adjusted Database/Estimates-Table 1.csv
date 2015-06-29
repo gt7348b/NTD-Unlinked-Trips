@@ -1,0 +1,355 @@
+NTDID,Agency,Modes,Tos,Estimate,Month,Year
+00002,Spokane Transit Authority,DR,DO,"18,359",April,2015
+00002,Spokane Transit Authority,DR,PT,"15,694",April,2015
+00002,Spokane Transit Authority,MB,DO,"887,142",April,2015
+00002,Spokane Transit Authority,VP,DO,"18,230",April,2015
+00011,Valley Regional Transit,DR,DO,"4,363",December,2014
+00011,Valley Regional Transit,DR,DO,"4,198",January,2015
+00011,Valley Regional Transit,DR,DO,"3,998",February,2015
+00011,Valley Regional Transit,DR,DO,"4,594",March,2015
+00011,Valley Regional Transit,DR,DO,"3,809",April,2015
+00011,Valley Regional Transit,MB,DO,"115,881",November,2014
+00011,Valley Regional Transit,MB,DO,"117,705",December,2014
+00011,Valley Regional Transit,MB,DO,"113,757",January,2015
+00011,Valley Regional Transit,MB,DO,"109,066",February,2015
+00011,Valley Regional Transit,MB,DO,"123,631",March,2015
+00011,Valley Regional Transit,MB,DO,"114,090",April,2015
+00028,Pierce County Ferry Operations,FB,PT,"11,896",January,2015
+00028,Pierce County Ferry Operations,FB,PT,"11,428",February,2015
+00028,Pierce County Ferry Operations,FB,PT,"13,705",March,2015
+00028,Pierce County Ferry Operations,FB,PT,"8,976",April,2015
+00035,Washington State Ferries,FB,DO,"1,174,998",April,2015
+00043,Link Transit,DR,DO,"3,717",April,2015
+00043,Link Transit,DR,PT,238,April,2015
+00043,Link Transit,MB,DO,"82,342",April,2015
+10040,Southeast Area Transit,DR,PT,400,March,2015
+10040,Southeast Area Transit,DR,PT,332,April,2015
+10040,Southeast Area Transit,MB,DO,"87,302",March,2015
+10040,Southeast Area Transit,MB,DO,"80,565",April,2015
+10049,The Greater New Haven Transit District,DR,DO,"17,951",April,2015
+10049,The Greater New Haven Transit District,MB,DO,309,April,2015
+10057,Norwalk Transit District,DR,DO,"3,417",April,2015
+10057,Norwalk Transit District,DR,PT,"4,418",April,2015
+10057,Norwalk Transit District,MB,DO,"138,272",April,2015
+10057,Norwalk Transit District,MB,PT,"2,483",April,2015
+10066,Chittenden County Transportation Authority,CB,DO,"17,874",April,2015
+10066,Chittenden County Transportation Authority,DR,PT,"4,102",April,2015
+10066,Chittenden County Transportation Authority,MB,DO,"201,745",April,2015
+10108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"51,551",October,2014
+10108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"42,025",November,2014
+10108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"45,219",December,2014
+10108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"47,029",January,2015
+10108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"45,216",February,2015
+10108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"50,189",March,2015
+10108,Greater Hartford Ridesharing Corporation - The Rideshare Company,VP,DO,"45,006",April,2015
+10117,Plymouth & Brockton Street Railway Company,CB,DO,"37,927",April,2015
+10130,Connecticut Department of Transportation -CTTRANSIT New Britain,MB,PT,"63,961",January,2015
+10130,Connecticut Department of Transportation -CTTRANSIT New Britain,MB,PT,"61,324",February,2015
+10130,Connecticut Department of Transportation -CTTRANSIT New Britain,MB,PT,"69,514",March,2015
+10130,Connecticut Department of Transportation -CTTRANSIT New Britain,MB,PT,"64,149",April,2015
+20002,Capital District Transportation Authority,CB,PT,"18,096",April,2015
+20002,Capital District Transportation Authority,DR,DO,"7,743",April,2015
+20002,Capital District Transportation Authority,DT,PT,"17,071",April,2015
+20002,Capital District Transportation Authority,MB,DO,"1,300,410",April,2015
+20002,Capital District Transportation Authority,VP,PT,"1,358",April,2015
+20004,Niagara Frontier Transportation Authority,DR,DO,"13,564",April,2015
+20004,Niagara Frontier Transportation Authority,LR,DO,"475,289",April,2015
+20004,Niagara Frontier Transportation Authority,MB,DO,"1,905,356",April,2015
+20006,City of Long Beach,DR,DO,"1,032",April,2015
+20006,City of Long Beach,MB,DO,"32,861",April,2015
+20076,Westchester County Bee-Line System,DR,PT,"21,282",March,2015
+20076,Westchester County Bee-Line System,DR,PT,"17,644",April,2015
+20076,Westchester County Bee-Line System,MB,PT,"2,410,799",March,2015
+20076,Westchester County Bee-Line System,MB,PT,"2,224,753",April,2015
+20135,Monsey New Square Trails Corporation,CB,DO,"57,894",March,2015
+20135,Monsey New Square Trails Corporation,CB,DO,"56,842",April,2015
+20177,"Adirondack Transit Lines, Inc,",CB,DO,"46,089",April,2015
+20204,"Senior Citizens United Community Services of Camden County, Inc.",DR,DO,"10,760",January,2015
+20204,"Senior Citizens United Community Services of Camden County, Inc.",DR,DO,"10,247",February,2015
+20204,"Senior Citizens United Community Services of Camden County, Inc.",DR,DO,"11,774",March,2015
+20204,"Senior Citizens United Community Services of Camden County, Inc.",DR,DO,"9,761",April,2015
+30001,Kanawha Valley Regional Transportation Authority,DR,DO,"1,896",March,2015
+30001,Kanawha Valley Regional Transportation Authority,DR,DO,"1,572",April,2015
+30001,Kanawha Valley Regional Transportation Authority,MB,DO,"219,362",March,2015
+30001,Kanawha Valley Regional Transportation Authority,MB,DO,"202,433",April,2015
+30008,Greater Lynchburg Transit Company,DR,DO,"1,551",March,2015
+30008,Greater Lynchburg Transit Company,DR,DO,"1,286",April,2015
+30008,Greater Lynchburg Transit Company,MB,DO,"297,295",March,2015
+30008,Greater Lynchburg Transit Company,MB,DO,"274,352",April,2015
+30010,Lehigh and Northampton Transportation Authority,DR,PT,"34,281",January,2015
+30010,Lehigh and Northampton Transportation Authority,DR,PT,"32,646",February,2015
+30010,Lehigh and Northampton Transportation Authority,DR,PT,"37,512",March,2015
+30010,Lehigh and Northampton Transportation Authority,DR,PT,"31,099",April,2015
+30011,Altoona Metro Transit,DR,DO,22,April,2015
+30011,Altoona Metro Transit,DR,PT,925,April,2015
+30011,Altoona Metro Transit,MB,DO,"47,468",April,2015
+30015,Luzerne County Transportation Authority,DR,DO,"13,771",March,2015
+30015,Luzerne County Transportation Authority,DR,DO,"11,417",April,2015
+30015,Luzerne County Transportation Authority,MB,DO,"97,584",January,2015
+30015,Luzerne County Transportation Authority,MB,DO,"93,560",February,2015
+30015,Luzerne County Transportation Authority,MB,DO,"106,055",March,2015
+30015,Luzerne County Transportation Authority,MB,DO,"97,871",April,2015
+30022,Port Authority of Allegheny County,DR,PT,"107,657",April,2015
+30022,Port Authority of Allegheny County,IP,DO,"19,007",April,2015
+30022,Port Authority of Allegheny County,LR,DO,"649,552",April,2015
+30022,Port Authority of Allegheny County,MB,DO,"4,280,729",April,2015
+30030,Washington Metropolitan Area Transit Authority,MB,PT,"468,746",October,2014
+30030,Washington Metropolitan Area Transit Authority,MB,PT,"396,423",November,2014
+30030,Washington Metropolitan Area Transit Authority,MB,PT,"402,662",December,2014
+30030,Washington Metropolitan Area Transit Authority,MB,PT,"389,157",January,2015
+30030,Washington Metropolitan Area Transit Authority,MB,PT,"373,110",February,2015
+30030,Washington Metropolitan Area Transit Authority,MB,PT,"422,938",March,2015
+30030,Washington Metropolitan Area Transit Authority,MB,PT,"390,299",April,2015
+30057,Pennsylvania Department of Transportation,CR,PT,"118,631",April,2015
+30061,Mid Mon Valley Transit Authority,DR,PT,43,April,2015
+30061,Mid Mon Valley Transit Authority,MB,PT,"25,721",April,2015
+30068,Fairfax Connector Bus System,MB,PT,"711,462",April,2015
+30072,Transit Services of Frederick County,DR,DO,"4,215",April,2015
+30072,Transit Services of Frederick County,MB,DO,"49,322",April,2015
+30081,Loudoun County Commuter Bus Service - Office of Transportation Services,CB,PT,"108,040",April,2015
+30081,Loudoun County Commuter Bus Service - Office of Transportation Services,MB,PT,"27,797",April,2015
+30102,Martz Trailways,CB,DO,"80,365",April,2015
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"25,416",September,2014
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"27,509",October,2014
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"22,318",November,2014
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"22,892",December,2014
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"22,629",January,2015
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"22,051",February,2015
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"25,251",March,2015
+30103,"Martz Group, National Coach Works of Virginia",CB,DO,"24,792",April,2015
+40002,Knoxville Area Transit,DR,DO,"3,965",February,2015
+40002,Knoxville Area Transit,DR,DO,"4,556",March,2015
+40002,Knoxville Area Transit,DR,DO,"3,777",April,2015
+40002,Knoxville Area Transit,MB,DO,"227,776",February,2015
+40002,Knoxville Area Transit,MB,DO,"258,195",March,2015
+40002,Knoxville Area Transit,MB,DO,"238,270",April,2015
+40003,Memphis Area Transit Authority,SR,DO,"31,619",July,2014
+40003,Memphis Area Transit Authority,SR,DO,"30,615",August,2014
+40003,Memphis Area Transit Authority,SR,DO,"33,216",September,2014
+40003,Memphis Area Transit Authority,SR,DO,"37,879",October,2014
+40003,Memphis Area Transit Authority,SR,DO,"31,574",November,2014
+40003,Memphis Area Transit Authority,SR,DO,"32,275",December,2014
+40003,Memphis Area Transit Authority,SR,DO,"23,250",January,2015
+40003,Memphis Area Transit Authority,SR,DO,"24,764",February,2015
+40003,Memphis Area Transit Authority,SR,DO,"30,912",March,2015
+40003,Memphis Area Transit Authority,SR,DO,"30,579",April,2015
+40006,Cape Fear Public Transportation Authority,DR,DO,"4,257",April,2015
+40006,Cape Fear Public Transportation Authority,MB,PT,"121,553",April,2015
+40006,Cape Fear Public Transportation Authority,VP,DO,599,April,2015
+40012,Winston-Salem Transit Authority - Trans-Aid of Forsyth County,DR,DO,"14,785",April,2015
+40012,Winston-Salem Transit Authority - Trans-Aid of Forsyth County,MB,DO,"243,523",April,2015
+40017,Lexington Transit Authority,DT,PT,11,March,2015
+40017,Lexington Transit Authority,DT,PT,10,April,2015
+40027,Pinellas Suncoast Transit Authority,CB,DO,"8,432",April,2015
+40027,Pinellas Suncoast Transit Authority,DR,PT,"11,662",April,2015
+40027,Pinellas Suncoast Transit Authority,DT,PT,"11,838",April,2015
+40027,Pinellas Suncoast Transit Authority,MB,DO,"1,107,766",April,2015
+40027,Pinellas Suncoast Transit Authority,MB,PT,"88,764",April,2015
+40031,Lakeland Area Mass Transit District,DR,DO,"5,236",April,2015
+40031,Lakeland Area Mass Transit District,MB,DO,"88,250",April,2015
+40034,Miami-Dade Transit,DR,PT,"119,397",April,2015
+40034,Miami-Dade Transit,HR,DO,"1,970,102",April,2015
+40034,Miami-Dade Transit,MB,DO,"6,084,680",April,2015
+40034,Miami-Dade Transit,MB,PT,"29,761",April,2015
+40034,Miami-Dade Transit,MG,DO,"356,972",March,2015
+40034,Miami-Dade Transit,MG,DO,"133,570",April,2015
+40053,Greenville Transit Authority,DR,DO,772,October,2014
+40053,Greenville Transit Authority,DR,DO,655,November,2014
+40053,Greenville Transit Authority,DR,DO,691,December,2014
+40053,Greenville Transit Authority,DR,DO,665,January,2015
+40053,Greenville Transit Authority,DR,DO,633,February,2015
+40053,Greenville Transit Authority,DR,DO,727,March,2015
+40053,Greenville Transit Authority,DR,DO,603,April,2015
+40053,Greenville Transit Authority,MB,DO,"102,757",October,2014
+40053,Greenville Transit Authority,MB,DO,"86,903",November,2014
+40053,Greenville Transit Authority,MB,DO,"88,271",December,2014
+40053,Greenville Transit Authority,MB,DO,"85,311",January,2015
+40053,Greenville Transit Authority,MB,DO,"81,793",February,2015
+40053,Greenville Transit Authority,MB,DO,"92,716",March,2015
+40053,Greenville Transit Authority,MB,DO,"85,561",April,2015
+40077,South Florida Regional Transportation Authority,CR,PT,"381,270",April,2015
+40077,South Florida Regional Transportation Authority,MB,PT,"87,103",April,2015
+40086,Metropolitan Bus Authority,DR,DO,"5,971",April,2015
+40086,Metropolitan Bus Authority,MB,DO,"484,740",April,2015
+40102,Waccamaw Regional Transportation Authority,DR,DO,316,November,2014
+40102,Waccamaw Regional Transportation Authority,DR,DO,333,December,2014
+40102,Waccamaw Regional Transportation Authority,DR,DO,320,January,2015
+40102,Waccamaw Regional Transportation Authority,DR,DO,305,February,2015
+40102,Waccamaw Regional Transportation Authority,DR,DO,350,March,2015
+40102,Waccamaw Regional Transportation Authority,DR,DO,290,April,2015
+40102,Waccamaw Regional Transportation Authority,MB,DO,"27,853",November,2014
+40102,Waccamaw Regional Transportation Authority,MB,DO,"28,291",December,2014
+40102,Waccamaw Regional Transportation Authority,MB,DO,"27,342",January,2015
+40102,Waccamaw Regional Transportation Authority,MB,DO,"26,215",February,2015
+40102,Waccamaw Regional Transportation Authority,MB,DO,"29,716",March,2015
+40102,Waccamaw Regional Transportation Authority,MB,DO,"27,423",April,2015
+40120,"City of Ocala, Florida",DR,PT,"1,187",April,2015
+40120,"City of Ocala, Florida",MB,PT,"31,600",April,2015
+40127,Polk County Transit Services Division - Polk County Board of County Commissioners,DR,PT,79,February,2015
+40127,Polk County Transit Services Division - Polk County Board of County Commissioners,DR,PT,91,March,2015
+40127,Polk County Transit Services Division - Polk County Board of County Commissioners,DR,PT,75,April,2015
+40144,Hall Area Transit,DR,DO,"1,895",March,2015
+40144,Hall Area Transit,DR,DO,"1,571",April,2015
+40144,Hall Area Transit,MB,DO,"10,297",March,2015
+40144,Hall Area Transit,MB,DO,"9,502",April,2015
+40152,"Miami Lakes - vRide, Inc.",VP,DO,"43,156",March,2015
+40152,"Miami Lakes - vRide, Inc.",VP,DO,"38,699",April,2015
+40175,Puerto Rico Maritime Transport Authority,FB,DO,"108,722",April,2015
+40185,Bay County Transportation Planning Organization,DR,PT,"6,634",April,2015
+40185,Bay County Transportation Planning Organization,MB,PT,"53,460",April,2015
+40191,Transit Authority of Central Kentucky,DR,DO,"4,732",April,2015
+40191,Transit Authority of Central Kentucky,MB,DO,"2,418",April,2015
+40191,Transit Authority of Central Kentucky,VP,DO,"4,126",April,2015
+40196,Kentuckiana Regional Planning and Development Agency,VP,DO,"14,947",April,2015
+40230,City of Atlanta - Department of Public Works - Transit Division,SR,DO,"63,177",April,2015
+50016,Central Ohio Transit Authority,DR,PT,"21,217",April,2015
+50016,Central Ohio Transit Authority,MB,DO,"1,457,830",April,2015
+50029,Bay Metropolitan Transit Authority,DR,DO,"3,823",April,2015
+50029,Bay Metropolitan Transit Authority,MB,DO,"42,026",April,2015
+50057,Rock Island County Metropolitan Mass Transit District,FB,PT,138,November,2014
+50057,Rock Island County Metropolitan Mass Transit District,FB,PT,147,December,2014
+50057,Rock Island County Metropolitan Mass Transit District,FB,PT,123,January,2015
+50057,Rock Island County Metropolitan Mass Transit District,FB,PT,118,February,2015
+50057,Rock Island County Metropolitan Mass Transit District,FB,PT,142,March,2015
+50057,Rock Island County Metropolitan Mass Transit District,FB,PT,93,April,2015
+50113,Pace - Suburban Bus Division,DR,DO,"2,238",April,2015
+50113,Pace - Suburban Bus Division,DR,PT,"79,372",April,2015
+50113,Pace - Suburban Bus Division,DT,PT,"4,717",April,2015
+50113,Pace - Suburban Bus Division,MB,DO,"2,199,611",April,2015
+50113,Pace - Suburban Bus Division,MB,PT,"135,784",April,2015
+50113,Pace - Suburban Bus Division,VP,DO,"149,168",April,2015
+50119,City of Detroit Department of Transportation,DR,PT,801,April,2015
+50119,City of Detroit Department of Transportation,DT,PT,"17,285",April,2015
+50154,Metropolitan Council,CB,PT,"19,084",January,2015
+50154,Metropolitan Council,CB,PT,"18,596",February,2015
+50154,Metropolitan Council,CB,PT,"21,294",March,2015
+50154,Metropolitan Council,CB,PT,"20,907",April,2015
+50157,Butler County Regional Transit Authority,CB,DO,"7,127",April,2015
+50157,Butler County Regional Transit Authority,DR,DO,"3,242",April,2015
+50157,Butler County Regional Transit Authority,MB,DO,"42,549",April,2015
+50161,Ozaukee County Transit Services,CB,DO,"6,734",April,2015
+50161,Ozaukee County Transit Services,DR,PT,"8,135",April,2015
+50182,"Pace-Suburban Bus Division, ADA Paratransit Services",DR,PT,"315,681",April,2015
+50182,"Pace-Suburban Bus Division, ADA Paratransit Services",DT,PT,"3,773",April,2015
+50193,"VRide, Inc. - Michigan",VP,DO,"159,542",March,2015
+50193,"VRide, Inc. - Michigan",VP,DO,"143,066",April,2015
+50198,Medina County Public Transit,DR,DO,"2,994",April,2015
+50198,Medina County Public Transit,DT,PT,287,March,2015
+50198,Medina County Public Transit,DT,PT,257,April,2015
+50198,Medina County Public Transit,MB,DO,"1,783",April,2015
+50515,University of Minnesota Transit,DR,DO,815,March,2015
+50515,University of Minnesota Transit,DR,DO,676,April,2015
+60014,City of Brownsville - Brownsville Metro,CB,PT,"11,600",April,2015
+60016,Beaumont Municipal Transit System,DR,PT,"1,554",April,2015
+60016,Beaumont Municipal Transit System,MB,PT,"38,714",April,2015
+60017,Central Oklahoma Transportation and Parking Authority,DT,PT,804,December,2014
+60017,Central Oklahoma Transportation and Parking Authority,DT,PT,798,January,2015
+60017,Central Oklahoma Transportation and Parking Authority,DT,PT,766,February,2015
+60017,Central Oklahoma Transportation and Parking Authority,DT,PT,862,March,2015
+60017,Central Oklahoma Transportation and Parking Authority,DT,PT,772,April,2015
+60038,Lafayette Transit System,DR,PT,"2,379",April,2015
+60038,Lafayette Transit System,MB,DO,"107,391",April,2015
+60038,Lafayette Transit System,MB,PT,"2,177",April,2015
+60041,Handitran Special Transit Division - City of Arlington,CB,PT,"5,925",April,2015
+60048,Capital Metropolitan Transportation Authority,CB,PT,"44,839",December,2014
+60048,Capital Metropolitan Transportation Authority,CB,PT,"44,324",January,2015
+60048,Capital Metropolitan Transportation Authority,CB,PT,"43,191",February,2015
+60048,Capital Metropolitan Transportation Authority,CB,PT,"49,458",March,2015
+60048,Capital Metropolitan Transportation Authority,CB,PT,"48,559",April,2015
+60048,Capital Metropolitan Transportation Authority,DT,PT,"2,435",December,2014
+60048,Capital Metropolitan Transportation Authority,DT,PT,"2,417",January,2015
+60048,Capital Metropolitan Transportation Authority,DT,PT,"2,320",February,2015
+60048,Capital Metropolitan Transportation Authority,DT,PT,"2,611",March,2015
+60048,Capital Metropolitan Transportation Authority,DT,PT,"2,339",April,2015
+60048,Capital Metropolitan Transportation Authority,RB,PT,"180,853",December,2014
+60048,Capital Metropolitan Transportation Authority,RB,PT,"170,366",January,2015
+60048,Capital Metropolitan Transportation Authority,RB,PT,"159,944",February,2015
+60048,Capital Metropolitan Transportation Authority,RB,PT,"186,834",March,2015
+60048,Capital Metropolitan Transportation Authority,RB,PT,"191,023",April,2015
+60051,Corpus Christi Regional Transportation Authority,FB,PT,"5,910",April,2015
+60051,Corpus Christi Regional Transportation Authority,VP,DO,867,February,2015
+60051,Corpus Christi Regional Transportation Authority,VP,DO,962,March,2015
+60051,Corpus Christi Regional Transportation Authority,VP,DO,863,April,2015
+60059,Brazos Transit District,CB,PT,"55,873",February,2015
+60059,Brazos Transit District,CB,PT,"63,980",March,2015
+60059,Brazos Transit District,CB,PT,"62,817",April,2015
+60107,"Texoma Area Paratransit System, Inc",CB,DO,"8,699",October,2014
+60107,"Texoma Area Paratransit System, Inc",CB,DO,"7,058",November,2014
+60107,"Texoma Area Paratransit System, Inc",CB,DO,"7,240",December,2014
+60107,"Texoma Area Paratransit System, Inc",CB,DO,"7,157",January,2015
+60107,"Texoma Area Paratransit System, Inc",CB,DO,"6,974",February,2015
+60107,"Texoma Area Paratransit System, Inc",CB,DO,"7,986",March,2015
+60107,"Texoma Area Paratransit System, Inc",CB,DO,"7,841",April,2015
+60107,"Texoma Area Paratransit System, Inc",CB,PT,"1,673",October,2014
+60107,"Texoma Area Paratransit System, Inc",CB,PT,"1,357",November,2014
+60107,"Texoma Area Paratransit System, Inc",CB,PT,"1,392",December,2014
+60107,"Texoma Area Paratransit System, Inc",CB,PT,"1,376",January,2015
+60107,"Texoma Area Paratransit System, Inc",CB,PT,"1,341",February,2015
+60107,"Texoma Area Paratransit System, Inc",CB,PT,"1,536",March,2015
+60107,"Texoma Area Paratransit System, Inc",CB,PT,"1,508",April,2015
+60107,"Texoma Area Paratransit System, Inc",DR,DO,"42,315",October,2014
+60107,"Texoma Area Paratransit System, Inc",DR,DO,"35,902",November,2014
+60107,"Texoma Area Paratransit System, Inc",DR,DO,"37,878",December,2014
+60107,"Texoma Area Paratransit System, Inc",DR,DO,"36,449",January,2015
+60107,"Texoma Area Paratransit System, Inc",DR,DO,"34,711",February,2015
+60107,"Texoma Area Paratransit System, Inc",DR,DO,"39,885",March,2015
+60107,"Texoma Area Paratransit System, Inc",DR,DO,"33,067",April,2015
+60107,"Texoma Area Paratransit System, Inc",MB,DO,"6,515",October,2014
+60107,"Texoma Area Paratransit System, Inc",MB,DO,"5,510",November,2014
+60107,"Texoma Area Paratransit System, Inc",MB,DO,"5,597",December,2014
+60107,"Texoma Area Paratransit System, Inc",MB,DO,"5,409",January,2015
+60107,"Texoma Area Paratransit System, Inc",MB,DO,"5,186",February,2015
+60107,"Texoma Area Paratransit System, Inc",MB,DO,"5,879",March,2015
+60107,"Texoma Area Paratransit System, Inc",MB,DO,"5,425",April,2015
+60124,"vRide, Inc. - El Paso",VP,DO,"19,808",March,2015
+60124,"vRide, Inc. - El Paso",VP,DO,"17,762",April,2015
+70002,Transit Authority of Omaha,DR,DO,"8,089",April,2015
+70002,Transit Authority of Omaha,MB,DO,"295,650",April,2015
+80025,City of Loveland Transit,DR,DO,629,April,2015
+80025,City of Loveland Transit,MB,DO,"11,019",April,2015
+80107,The University of Montana - ASUM Transportation,MB,DO,"13,947",September,2014
+80107,The University of Montana - ASUM Transportation,MB,DO,"14,799",October,2014
+80107,The University of Montana - ASUM Transportation,MB,DO,"12,516",November,2014
+80107,The University of Montana - ASUM Transportation,MB,DO,"12,713",December,2014
+80107,The University of Montana - ASUM Transportation,MB,DO,"12,287",January,2015
+80107,The University of Montana - ASUM Transportation,MB,DO,"11,780",February,2015
+80107,The University of Montana - ASUM Transportation,MB,DO,"13,353",March,2015
+80107,The University of Montana - ASUM Transportation,MB,DO,"12,323",April,2015
+90006,Santa Cruz Metropolitan Transit District,DR,DO,"6,583",April,2015
+90006,Santa Cruz Metropolitan Transit District,DT,PT,"1,046",April,2015
+90013,Santa Clara Valley Transportation Authority,DR,PT,"51,691",April,2015
+90013,Santa Clara Valley Transportation Authority,LR,DO,"918,241",April,2015
+90013,Santa Clara Valley Transportation Authority,MB,DO,"2,728,964",April,2015
+90013,Santa Clara Valley Transportation Authority,MB,PT,"34,786",April,2015
+90078,Central Contra Costa Transit Authority,DR,PT,"11,519",April,2015
+90078,Central Contra Costa Transit Authority,MB,DO,"299,280",April,2015
+90087,Santa Maria Area Transit,DR,PT,"2,214",April,2015
+90087,Santa Maria Area Transit,MB,PT,"72,619",April,2015
+90092,City of Fairfield - Fairfield and Suisun Transit,DR,PT,"1,863",April,2015
+90092,City of Fairfield - Fairfield and Suisun Transit,MB,PT,"89,389",April,2015
+90144,Livermore / Amador Valley Transit Authority,DR,PT,"3,548",April,2015
+90169,"vRide, Inc. - Valley Metro",VP,DO,1,March,2015
+90169,"vRide, Inc. - Valley Metro",VP,DO,1,April,2015
+90206,San Luis Obispo Regional Transit Authority,CB,DO,60,April,2015
+90206,San Luis Obispo Regional Transit Authority,DR,DO,"4,409",April,2015
+90206,San Luis Obispo Regional Transit Authority,MB,DO,"89,786",April,2015
+90219,Northern Arizona Intergovernmental Public Transportation Authority,DR,DO,"1,466",April,2015
+90219,Northern Arizona Intergovernmental Public Transportation Authority,MB,DO,"156,569",April,2015
+90228,"vRide, Inc. - Tucson",VP,DO,"7,279",March,2015
+90228,"vRide, Inc. - Tucson",VP,DO,"6,527",April,2015
+90233,Yuma County Intergovernmental Public Transportation Authority,DR,PT,385,April,2015
+90233,Yuma County Intergovernmental Public Transportation Authority,MB,PT,"35,461",April,2015
+90241,County of Maui - Dept. of Transportation,CB,PT,"15,746",January,2015
+90241,County of Maui - Dept. of Transportation,CB,PT,"15,344",February,2015
+90241,County of Maui - Dept. of Transportation,CB,PT,"17,570",March,2015
+90241,County of Maui - Dept. of Transportation,CB,PT,"17,251",April,2015
+90241,County of Maui - Dept. of Transportation,DR,PT,"37,106",January,2015
+90241,County of Maui - Dept. of Transportation,DR,PT,"35,336",February,2015
+90241,County of Maui - Dept. of Transportation,DR,PT,"40,603",March,2015
+90241,County of Maui - Dept. of Transportation,DR,PT,"33,662",April,2015
+90241,County of Maui - Dept. of Transportation,MB,PT,"179,102",December,2014
+90241,County of Maui - Dept. of Transportation,MB,PT,"173,095",January,2015
+90241,County of Maui - Dept. of Transportation,MB,PT,"165,958",February,2015
+90241,County of Maui - Dept. of Transportation,MB,PT,"188,121",March,2015
+90241,County of Maui - Dept. of Transportation,MB,PT,"173,603",April,2015
+90242,Las Vegas Monorail Company,MG,PT,"153,053",April,2015

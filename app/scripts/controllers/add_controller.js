@@ -17,11 +17,11 @@ var name_array = [];
       data.filter(function(entry){ //filters the data by agency name
 
         //  console.log(entry.Modes);
-          name.push(entry.Agency);  //adds the data to the name array
+          name_array.push(entry.Agency);  //adds the data to the name array
 
       });
-
-      name_array = name
+      console.log(name);
+      name_array.push(name);
     });
 
     console.log(name_array);

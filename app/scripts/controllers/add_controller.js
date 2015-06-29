@@ -9,7 +9,7 @@
 
 var name_array = [];
 
-    var name_search = d3.csv('data/January 2015 Adjusted Database/VRH-Table 1.csv', function(error, data){
+    var name_search = d3.csv('data/April 2015 Adjusted Database/VRH-Table 1.csv', function(error, data){
 
       // console.log(data);
       var name = [];

@@ -5,8 +5,8 @@
       function($q, $location, DATA_SOURCE){
 
        var searchAgency = function(agency){
-           console.log(agency);
-           console.log(DATA_SOURCE);
+          // console.log(agency);
+          // console.log(DATA_SOURCE);
            var response = [];
            var deferred = $q.defer();
 

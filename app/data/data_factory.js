@@ -63,7 +63,7 @@
                return {
                  agency: t.Agency,
                  mode:   t.Modes,
-                 region: t.UZA_Name,
+                 region: t.UZA,
                  trips: month.map(function(d){
                    return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
                  })
@@ -163,7 +163,7 @@
           .filter(function(key){ return key!=='Active'})
           .filter(function(key){ return key!=='SSW'})
           .filter(function(key){ return key!=='UZA'})
-          .filter(function(key){ return key!=='UZA_Name'})
+          .filter(function(key){ return key!=='UZA Name'})
           .filter(function(key){ return key!=='TOS'})
           .filter(function(key){ return key!=='5 digit NTDID'})
           .filter(function(key){ return key!=='4 digit NTDID'})
@@ -181,7 +181,7 @@
             return {
               agency: t.Agency,
               mode:   t.Modes,
-              region: t.UZA_Name,
+              region: t.UZA,
               trips: month.map(function(d){
                 return {month: d, upt: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })
@@ -250,7 +250,7 @@
             return {
               agency: t.Agency,
               mode:   t.Modes,
-              region: t.UZA_Name,
+              region: t.UZA,
               miles: month.map(function(d){
                 return {month: d, vehmiles: +t[d].replace(/,/g, '')}; //returns array of month and unlinked passenger trips as number
               })
